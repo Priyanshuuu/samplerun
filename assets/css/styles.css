@@ -1,0 +1,3204 @@
+.DialogModal .MuiDialog-scrollBody {
+    overflow-y: scroll
+}
+
+@media (min-width:46.25em) {
+    .DialogModal .MuiDialog-paperWidthFalse {
+        width: 960px
+    }
+}
+
+.DialogModal .MuiDialog-paper {
+    box-shadow: 0 14px 20px rgba(15, 15, 33, .1);
+    border-radius: 8px
+}
+
+@media (min-width:46.25em) {
+    .DialogModal .MuiDialog-paper {
+        border-radius: 32px
+    }
+}
+
+.DialogModal .MuiDialogContent-root {
+    padding: 0
+}
+
+.DialogModal .MuiDialogContent-root>.MuiLinearProgress-root {
+    margin: 50px
+}
+
+.DialogModal .MuiDialogContent-root:first-child {
+    padding: 0
+}
+
+.DialogModal .MuiDialogContent-root>.MuiPaper-root {
+    margin: 0 auto;
+    box-shadow: none;
+    border-radius: 0
+}
+
+.DialogModal .MuiDialogContent-root .CloseButton {
+    position: absolute;
+    top: 3px;
+    right: 3px
+}
+
+.DialogModal .MuiDialogActions-root {
+    justify-content: center
+}
+
+body {
+    margin: 0;
+    font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", -apple-system, serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #f6f6fa
+}
+
+a {
+    color: #04c;
+    border-bottom: 1px solid #cdf
+}
+
+a,
+a:hover {
+    text-decoration: none
+}
+
+a:hover {
+    color: #026;
+    border-bottom: 1px solid #026
+}
+
+a:active {
+    color: #2f3541;
+    text-decoration: none;
+    border-bottom: 1px solid #2f3541
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
+}
+
+#root {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    max-width: 1400px;
+    margin: 0 auto
+}
+
+#root .ContentLoader {
+    text-align: center;
+    align-content: center
+}
+
+#root .ContentLoader,
+#root .ContentPage {
+    flex: 1 1;
+    display: flex;
+    justify-content: center
+}
+
+#root .ContentPage {
+    margin-bottom: 10px
+}
+
+.ContentContainer {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 15px 25px
+}
+
+@media (min-width:46.25em) {
+    .ContentContainer {
+        padding: 24px 50px 54px
+    }
+}
+
+.ContentContainer.MuiPaper-root {
+    width: calc(100% - 20px);
+    padding: 40px 10px 32px;
+    margin: auto auto 55px
+}
+
+@media (min-width:46.25em) {
+    .ContentContainer.MuiPaper-root {
+        padding: 40px 50px
+    }
+}
+
+.ContentContainerStaticPages {
+    max-width: 790px;
+    margin: 0 auto;
+    padding: 15px 25px
+}
+
+@media (min-width:46.25em) {
+    .ContentContainerStaticPages {
+        padding: 54px 50px
+    }
+}
+
+.hidden {
+    display: none!important
+}
+
+.Tags .MuiChip-root {
+    margin: 0 5px 5px 0
+}
+
+.errorMessages {
+    color: red
+}
+
+.Header {
+    justify-content: space-between;
+    align-content: stretch;
+    padding: 5px 15px;
+    margin: 0 0 15px 10px;
+    font-family: "Roboto", "Helevtica Neue", "Helvetica", "Arial", serif;
+    background: #f6f6fa
+}
+
+.Header,
+.Logo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center
+}
+
+.Logo {
+    justify-content: flex-start
+}
+
+.Logo a {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 28px;
+    letter-spacing: .04em;
+    color: #0f0f21;
+    white-space: nowrap;
+    text-decoration: none;
+    border: 1px solid transparent
+}
+
+.Logo img {
+    position: relative;
+    max-width: 30px;
+    max-height: 30px;
+    margin-right: 20px
+}
+
+.MainMenu .FindYourHappyJob {
+    font-weight: 500;
+    color: #fff;
+    background: #6186d1;
+    border-radius: 10px;
+    order: 1;
+    padding: 4px 12px;
+    margin: 4px
+}
+
+.MainMenu .FindYourHappyJob:hover {
+    color: #fff;
+    background: #314b7f
+}
+
+.MainMenu .UniversalStyle {
+    border-radius: 10px;
+    padding: 4px 12px;
+    margin: 4px
+}
+
+.MainMenu .UniversalStyle:hover {
+    color: #fff;
+    background: #314b7f
+}
+
+.MainMenu .LoginMenuItem {
+    border-radius: 10px;
+    padding: 4px 12px;
+    margin: 4px
+}
+
+.MainMenu .LoginMenuItem:hover {
+    color: #fff;
+    background: #314b7f
+}
+
+.MainMenu .NicknameMenuItem {
+    border-radius: 10px;
+    padding: 4px 12px;
+    margin: 4px
+}
+
+.MainMenu .NicknameMenuItem:hover {
+    color: #fff;
+    background: #314b7f
+}
+
+.MainMenu .MyProfileMenuItem {
+    border-radius: 10px;
+    padding: 4px 12px;
+    margin: 4px
+}
+
+.MainMenu .MyProfileMenuItem:hover {
+    color: #fff;
+    background: #314b7f
+}
+
+.MainMenu .LogoutMenuItem {
+    border-radius: 10px;
+    padding: 4px 12px;
+    margin: 4px
+}
+
+.MainMenu .LogoutMenuItem:hover {
+    color: #fff;
+    background: #314b7f
+}
+
+.MainMenu a {
+    color: #2f3541;
+    background-color: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: .04em;
+    font-family: "Roboto", "Helevtica Neue", "Helvetica", "Arial", serif
+}
+
+.MainMenu a,
+.MainMenu a:active,
+.MainMenu a:hover {
+    text-decoration: none;
+    border: 1px solid transparent
+}
+
+.MainMenu .MainMenu-Desktop {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch
+}
+
+.FilterCheckbox.MuiCheckbox-root {
+    display: none
+}
+
+.FilterCheckbox.MuiCheckbox-root.Mui-checked+.MuiFormControlLabel-label {
+    color: #fff;
+    background-color: #314b7f
+}
+
+@media (min-width:46.25em) {
+    .FilterCheckbox.MuiCheckbox-root.Mui-checked+.MuiFormControlLabel-label:hover {
+        color: #fff;
+        background-color: #314b7f
+    }
+}
+
+.FilterCheckbox.MuiCheckbox-root.Mui-disabled+.MuiFormControlLabel-label,
+.FilterCheckbox.MuiCheckbox-root.Mui-disabled+.MuiFormControlLabel-label:hover {
+    color: #737c8c;
+    background-color: #eaeaf0
+}
+
+.FilterCheckbox.MuiCheckbox-root+.MuiFormControlLabel-label {
+    justify-content: flex-start;
+    vertical-align: center;
+    align-items: center;
+    align-self: center;
+    font-size: 13px;
+    font-weight: 400;
+    border-radius: 4px;
+    padding: 3px 5px;
+    transition: .2s;
+    color: #314b7f;
+    background-color: #c8d3e9
+}
+
+@media (min-width:46.25em) {
+    .FilterCheckbox.MuiCheckbox-root+.MuiFormControlLabel-label {
+        font-size: 16px;
+        padding: 3px 9px
+    }
+    .FilterCheckbox.MuiCheckbox-root+.MuiFormControlLabel-label:hover {
+        color: #fff;
+        background-color: #6186d1
+    }
+}
+
+.Filters {
+    padding: 10px 10px 45px;
+    background-color: #f6f6fa
+}
+
+aside .Filters {
+    width: 350px
+}
+
+.Filters .MuiFormControlLabel-root {
+    margin: 0 5px 5px 0
+}
+
+.Filters .MoreButton {
+    margin: 0 5px 5px 0;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 0 4px;
+    border-radius: 4px;
+    color: #2e2e2e;
+    background-color: #fff;
+    height: 30px;
+    justify-content: center;
+    vertical-align: center;
+    align-items: center;
+    align-self: center;
+    text-transform: none
+}
+
+@media (min-width:46.25em) {
+    .Filters .MoreButton {
+        font-size: 16px;
+        padding: 0 8px;
+        border-radius: 4px
+    }
+}
+
+.Filters .FilterCategory {
+    margin-bottom: 15px
+}
+
+.CompanyCard:hover {
+    transform: translateY(-4px)
+}
+
+.CompanyCard .TheCard {
+    position: relative;
+    height: 100%;
+    max-width: 500px;
+    min-width: 300px
+}
+
+.CompanyCard .TheCard:hover {
+    cursor: pointer;
+    transform: translateY(0)
+}
+
+@media (min-width:46.25em) {
+    .CompanyCard {
+        height: 100%
+    }
+}
+
+.CompanyCard .CardContents {
+    padding: 20px 16px
+}
+
+.CompanyCard .CardContents:hover {
+    transform: translateY(0)
+}
+
+@media (min-width:46.25em) {
+    .CompanyCard .CardContents {
+        padding: 28px 28px 0;
+        margin-bottom: 8px
+    }
+}
+
+.CompanyCard .MainBlock {
+    vertical-align: middle
+}
+
+.CompanyCard .CardTitle {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: .04em;
+    color: #0f0f21
+}
+
+.CompanyCard .CardText,
+.CompanyCard .CardTitle {
+    font-family: Roboto;
+    font-style: normal;
+    text-align: left
+}
+
+.CompanyCard .CardText {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: .05em;
+    color: #38374a;
+    margin-bottom: 4px
+}
+
+@media (min-width:46.25em) {
+    .CompanyCard .CardText {
+        margin-bottom: 6px
+    }
+}
+
+.CompanyCard .Tag {
+    padding: 2px 6px;
+    border: 1px solid #dbd8e1;
+    box-sizing: border-box;
+    border-radius: 4px;
+    flex: none;
+    order: 0;
+    align-self: flex-start;
+    margin-right: 4px;
+    margin-top: 8px
+}
+
+@media (min-width:46.25em) {
+    .CompanyCard .Tag {
+        padding: 2px 8px
+    }
+}
+
+.CompanyCard .TagText {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: .07em;
+    color: #656574;
+    flex: none;
+    order: 0;
+    align-self: center
+}
+
+@media (min-width:46.25em) {
+    .CompanyCard .TagText {
+        font-size: 13px;
+        line-height: 20px
+    }
+}
+
+.CompanyCard .Img {
+    width: 50px;
+    height: 50px
+}
+
+.CompanyCard .CompanyInfo-Image {
+    width: 56px;
+    height: 56px;
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border: 1px solid #f2eef9;
+    box-sizing: border-box;
+    border-radius: 13px
+}
+
+@media (min-width:46.25em) {
+    .CompanyCard .CompanyInfo-Image {
+        width: 72px;
+        height: 72px
+    }
+}
+
+.CompanyCard .CompanyTags {
+    overflow: hidden;
+    max-height: 68px
+}
+
+.VerifiedIcon {
+    color: #009929;
+    font-size: 48px;
+    vertical-align: middle;
+    padding-left: 4px
+}
+
+.MatchScoreCompanyCard.MuiChip-root {
+    position: absolute;
+    right: 0;
+    top: 16px;
+    padding: 0;
+    border: none
+}
+
+.MatchScoreCompanyCard .MuiChip-label {
+    width: 115px;
+    height: 24px;
+    background: #f9f7fe;
+    border-radius: 4px 0 0 4px;
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px
+}
+
+.MatchScoreCompanyCard-scoreText {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: .04em;
+    order: 0;
+    align-self: center;
+    margin-right: 4px
+}
+
+.MatchScoreCompanyCard-descText,
+.MatchScoreCompanyCard-scoreText {
+    font-family: Roboto;
+    font-style: normal;
+    color: #2f3541;
+    vertical-align: middle;
+    display: inline-block
+}
+
+.MatchScoreCompanyCard-descText {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: .05em;
+    order: 1
+}
+
+.MatchScoreCompanyCard-logoSrc {
+    max-height: 18px;
+    align-self: center;
+    vertical-align: middle;
+    margin-right: 8px
+}
+
+.PersistentDrawerLeft .FilterCompanies {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    border-radius: 0;
+    background-color: #04c
+}
+
+.PersistentDrawerLeft .ApplyFilters,
+.PersistentDrawerLeft .FilterCompanies .FilterCompaniesText {
+    color: #fff;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: .05em;
+    text-transform: uppercase
+}
+
+.PersistentDrawerLeft .ApplyFilters {
+    width: 100%;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: 24px 0 0;
+    padding: 8px 8px 12px;
+    border-radius: 0;
+    background-color: #04c
+}
+
+.SubscriptionForm {
+    margin-top: 16px
+}
+
+@media (min-width:46.25em) {
+    .SubscriptionForm {
+        margin-top: 32px
+    }
+}
+
+.SubscriptionForm .Padding {
+    padding: 16px
+}
+
+@media (min-width:46.25em) {
+    .SubscriptionForm .Padding {
+        padding: 50px
+    }
+}
+
+.SubscriptionForm .MuiTextField-root {
+    width: 100%;
+    margin: 5px
+}
+
+.SubscriptionForm .PaddingBottom {
+    padding-bottom: 8px
+}
+
+@media (min-width:46.25em) {
+    .SubscriptionForm .PaddingBottom {
+        padding-bottom: 24px
+    }
+}
+
+.SubscriptionForm .MarginBottom {
+    margin-bottom: 8px
+}
+
+@media (min-width:46.25em) {
+    .SubscriptionForm .MarginBottom {
+        margin-bottom: 24px
+    }
+}
+
+@media (min-width:46.25em) {
+    .SubscriptionForm .Centered {
+        display: inline-block
+    }
+}
+
+.SubscriptionForm .ReCAPTCHA div {
+    margin: 5px auto
+}
+
+.B2Bform {
+    margin-bottom: 55px
+}
+
+.B2Bform .Padding {
+    padding: 16px
+}
+
+@media (min-width:46.25em) {
+    .B2Bform .Padding {
+        padding: 50px
+    }
+}
+
+.B2Bform .MuiTextField-root {
+    width: 100%;
+    margin: 5px
+}
+
+.B2Bform .PaddingBottom {
+    padding-bottom: 8px
+}
+
+@media (min-width:46.25em) {
+    .B2Bform .PaddingBottom {
+        padding-bottom: 24px
+    }
+}
+
+@media (min-width:46.25em) {
+    .B2Bform .Centered {
+        display: inline-block
+    }
+}
+
+.JobSeekerCTA {
+    margin: 16px 0
+}
+
+@media (min-width:46.25em) {
+    .JobSeekerCTA {
+        margin: 32px 0
+    }
+}
+
+.JobSeekerCTA .Padding {
+    padding: 16px
+}
+
+@media (min-width:46.25em) {
+    .JobSeekerCTA .Padding {
+        padding: 50px
+    }
+}
+
+.JobSeekerCTA .MuiTextField-root {
+    width: 100%;
+    margin: 5px
+}
+
+.JobSeekerCTA .PaddingBottom {
+    padding-bottom: 8px
+}
+
+@media (min-width:46.25em) {
+    .JobSeekerCTA .PaddingBottom {
+        padding-bottom: 24px
+    }
+}
+
+.JobSeekerCTA .MarginBottom {
+    margin-bottom: 8px
+}
+
+@media (min-width:46.25em) {
+    .JobSeekerCTA .MarginBottom {
+        margin-bottom: 24px
+    }
+}
+
+@media (min-width:46.25em) {
+    .JobSeekerCTA .Centered {
+        display: inline-block
+    }
+}
+
+.JobSeekerCTA .ReCAPTCHA div {
+    margin: 5px auto
+}
+
+.HomePage {
+    width: calc(100% - 20px)
+}
+
+.HomePage .HomePage-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: #fff
+}
+
+.HomePage .HomePage-link {
+    color: #61dafb
+}
+
+.HomePage .Tagline1 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: .04em;
+    padding: 0 0 12px;
+    color: #172136;
+    text-align: center
+}
+
+@media (min-width:46.25em) {
+    .HomePage .Tagline1 {
+        padding: 4px 0 12px;
+        font-size: 32px;
+        line-height: 48px;
+        letter-spacing: .04em
+    }
+}
+
+.HomePage .Tagline2 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: .04em;
+    padding: 0 0 12px;
+    color: #172136;
+    text-align: center
+}
+
+@media (min-width:46.25em) {
+    .HomePage .Tagline2 {
+        padding: 0 0 24px;
+        font-size: 24px;
+        line-height: 36px;
+        letter-spacing: .04em
+    }
+}
+
+.HomePage .Content-Wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+    margin: 10px
+}
+
+.HomePage .Content-Wrapper .MarginBottom {
+    margin-bottom: 20px
+}
+
+.HomePage .Content-Wrapper .MarginTop {
+    margin-top: 30px
+}
+
+.HomePage .Content-Wrapper .CompanyFilters {
+    background: #3e4b8f;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    letter-spacing: .05em;
+    color: #fff
+}
+
+.HomePage .Content-Wrapper .Content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    padding: 0
+}
+
+.HomePage .Content-Wrapper .Content .Companies {
+    padding-bottom: 10px
+}
+
+.HomePage .Content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+.HomePage .Content-Footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%
+}
+
+.HomePage .Content-Footer .ShowMoreButton {
+    color: #171c36;
+    font-size: 16px;
+    padding: 20px;
+    margin: 20px 0 30px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    background-color: #fff
+}
+
+.SubscriptionThankYouPage {
+    width: 100%;
+    display: inline-block;
+    margin: 0 auto 28px;
+    padding: 30px;
+    border-radius: 16px
+}
+
+@media (min-width:46.25em) {
+    .SubscriptionThankYouPage {
+        width: 960px;
+        margin: 8px auto 54px
+    }
+}
+
+.SubscriptionThankYouPage .PaddingBottom {
+    padding-bottom: 38px
+}
+
+.SubscriptionThankYouPage .LineBreak {
+    padding-bottom: 14px
+}
+
+.SubscriptionThankYouPage .Tagline {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: .04em;
+    color: #172136;
+    text-align: center;
+    padding-bottom: 20px
+}
+
+@media (min-width:46.25em) {
+    .SubscriptionThankYouPage .Tagline {
+        font-size: 36px;
+        line-height: 47px;
+        padding-bottom: 30px
+    }
+}
+
+.SubscriptionThankYouPage .Tagline2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: .04em;
+    color: #172136;
+    text-align: center;
+    padding: 20px 0
+}
+
+@media (min-width:46.25em) {
+    .SubscriptionThankYouPage .Tagline2 {
+        font-size: 28px;
+        line-height: 36px;
+        padding: 30px 0
+    }
+}
+
+.SubscriptionThankYouPage .Centered {
+    justify-content: center;
+    align-items: center
+}
+
+.SubscriptionThankYouPage .TryItButton {
+    text-align: center;
+    align-self: center
+}
+
+.SubscriptionThankYouPage .Padding {
+    padding: 20px
+}
+
+.SubscriptionThankYouPage .PaddingBottom {
+    padding-bottom: 25px
+}
+
+@media (min-width:46.25em) {
+    .SubscriptionThankYouPage .PaddingBottom {
+        padding-bottom: 30px
+    }
+}
+
+.SubscriptionThankYouPage-Actions .MuiButton-root {
+    margin-bottom: 10px;
+    margin-right: 10px
+}
+
+.ThankYouPage {
+    width: 100%;
+    margin: 20px auto 55px;
+    display: inline-block;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    height: 270px
+}
+
+@media (min-width:46.25em) {
+    .ThankYouPage {
+        width: 600px
+    }
+}
+
+.ThankYouPage .PaddingBottom {
+    padding-bottom: 38px
+}
+
+.ThankYouPage .LineBreak {
+    padding-bottom: 14px
+}
+
+.ThankYouPage .MuiButton-root {
+    margin: 20px
+}
+
+.ThankYouPageCompanies {
+    width: 100%;
+    margin: 20px auto 55px;
+    display: inline-block;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    height: 270px
+}
+
+@media (min-width:46.25em) {
+    .ThankYouPageCompanies {
+        width: 600px
+    }
+}
+
+.ThankYouPageCompanies .PaddingBottom {
+    padding-bottom: 38px
+}
+
+.ThankYouPageCompanies .LineBreak {
+    padding-bottom: 14px
+}
+
+.ThankYouPageCompanies .MuiButton-root {
+    margin: 20px
+}
+
+.QuestionPage {
+    width: 860px;
+    margin: 0 auto
+}
+
+.QuestionPage .PaperContainer {
+    padding: 16px 12px 24px;
+    margin: 0 auto 32px
+}
+
+@media (min-width:46.25em) {
+    .QuestionPage .PaperContainer {
+        padding: 54px
+    }
+}
+
+.QuestionPage-Progress {
+    margin: 70px 24px 0
+}
+
+.QuestionPage-Progress .MuiSlider-thumb {
+    color: transparent
+}
+
+.QuestionPage-Progress .MuiSlider-rail {
+    background: #494949
+}
+
+.QuestionPage-Progress .MuiSlider-track {
+    background-color: #21b152
+}
+
+.QuestionPage-Progress .MuiSlider-valueLabel {
+    left: calc(-50% + -15px);
+    padding: 0 10px;
+    background: #21b152;
+    height: 30px
+}
+
+.QuestionPage-Progress .MuiSlider-valueLabel>span {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 7px;
+    padding: 0;
+    background-color: #21b152;
+    border: 5px solid #21b152;
+    border-top: none;
+    border-right: none;
+    font-weight: bolder
+}
+
+.QuestionPage-Progress .MuiSlider-valueLabel span {
+    border-radius: 0
+}
+
+.PollSlider {
+    width: 100%;
+    margin: 45px 0 15px
+}
+
+.PollSlider .SmallText {
+    font-size: 11px
+}
+
+@media (min-width:46.25em) {
+    .PollSlider .SmallText {
+        font-size: 14px
+    }
+}
+
+.PollSlider .MuiSlider {
+    height: 10px
+}
+
+.PollSlider .MuiSlider-track {
+    opacity: 0
+}
+
+.PollSlider .MuiSlider-marked {
+    margin-bottom: 0
+}
+
+.PollSlider .MuiSlider-mark {
+    height: 10px
+}
+
+.PollSlider .MuiSlider-thumb {
+    width: 0;
+    height: 0;
+    margin-top: 3px;
+    margin-left: 0;
+    background: #314b7f;
+    border-radius: 0
+}
+
+.PollSlider .MuiSlider-thumb.Mui-disabled {
+    height: 1px;
+    margin-top: 3px
+}
+
+.PollSlider .MuiSlider-valueLabel {
+    left: auto
+}
+
+.PollSlider .MuiSlider-valueLabel span {
+    background: #314b7f
+}
+
+.PollSlider .MuiSlider-rail,
+.PollSlider .MuiSlider-track {
+    height: 10px
+}
+
+.PollSlider .MuiSlider-markLabel {
+    display: none
+}
+
+.PollSlider-Caption {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    color: #2f3541;
+    line-height: 18px;
+    font-weight: 400
+}
+
+.PollSlider-CaptionLeft {
+    text-align: left
+}
+
+@media (min-width:46.25em) {
+    .PollSlider-CaptionLeft {
+        max-width: 40%
+    }
+}
+
+.PollSlider-CaptionRight {
+    text-align: right
+}
+
+@media (min-width:46.25em) {
+    .PollSlider-CaptionRight {
+        max-width: 40%
+    }
+}
+
+.PollElement-Bucket .Bucket__menu {
+    position: relative;
+    box-shadow: none
+}
+
+.PollElement-Bucket .Bucket__menu-list {
+    display: flex;
+    align-items: flex start;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-height: none
+}
+
+.PollElement-Bucket .Bucket__option {
+    font-size: 14px;
+    align-self: center;
+    width: auto;
+    color: #fff;
+    background: #2d3e77;
+    padding: 4px 8px;
+    margin: 0 5px 5px 0;
+    border-radius: 3px
+}
+
+@media (min-width:46.25em) {
+    .PollElement-Bucket .Bucket__option {
+        font-size: 16px
+    }
+}
+
+.PollElement-Bucket .Bucket__option--is-focused {
+    width: auto;
+    color: #fff;
+    background: #00184e;
+    cursor: pointer
+}
+
+.Poll .PaddingBottom {
+    padding-bottom: 28px
+}
+
+.Poll .TextField .InputField {
+    min-height: 80px;
+    width: 100%
+}
+
+@media (min-width:46.25em) {
+    .Poll .TextField .InputField {
+        width: 700px
+    }
+}
+
+.Poll .InputField {
+    width: 100%
+}
+
+.Poll .InputField.Invalid,
+.Poll .InputField.Invalid+div {
+    color: red
+}
+
+@media (min-width:46.25em) {
+    .Poll .InputField {
+        width: 400px
+    }
+}
+
+.Poll .QuestionText {
+    font-size: 16px;
+    line-height: 21px;
+    padding-bottom: 8px
+}
+
+@media (min-width:46.25em) {
+    .Poll .QuestionText {
+        font-size: 18px;
+        line-height: 28px;
+        padding-bottom: 12px
+    }
+}
+
+.Poll .Helper {
+    font-size: 16px;
+    line-height: 21px;
+    padding-top: 16px;
+    color: grey
+}
+
+@media (min-width:46.25em) {
+    .Poll .Helper {
+        font-size: 16px;
+        line-height: 21px;
+        padding-top: 24px
+    }
+}
+
+.Poll .Greeting {
+    font-size: 20px
+}
+
+@media (min-width:46.25em) {
+    .Poll .Greeting {
+        font-size: 24px
+    }
+}
+
+.Poll .PollElement {
+    margin-bottom: 32px
+}
+
+@media (min-width:46.25em) {
+    .Poll .PollElement {
+        margin-bottom: 62px
+    }
+}
+
+.Poll .PollElement-Dropdown {
+    z-index: 1000;
+    max-width: 400px
+}
+
+.Poll .PollActions .MuiButton-root {
+    margin-right: 15px
+}
+
+@media (min-width:46.25em) {
+    .Poll .PollActions .MuiButton-root {
+        margin-right: 30px
+    }
+}
+
+.AboutPage {
+    width: 100%;
+    margin: 0 auto 16px
+}
+
+@media (min-width:46.25em) {
+    .AboutPage {
+        width: 960px;
+        margin: 8px auto 55px
+    }
+}
+
+.AboutPage h1 {
+    font-size: 36px;
+    line-height: 47px;
+    letter-spacing: .04em
+}
+
+.AboutPage h1,
+.AboutPage h2 {
+    font-style: normal;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    color: #0f0f21
+}
+
+.AboutPage h2 {
+    font-family: Roboto;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: .05em
+}
+
+.AboutPage .ImgInterface1 {
+    max-width: 100%;
+    margin-top: 8px
+}
+
+@media (min-width:46.25em) {
+    .AboutPage .ImgInterface1 {
+        width: 549px;
+        height: 454px;
+        margin-top: 8px
+    }
+}
+
+.AboutPage .ImgInterface2 {
+    max-width: 100%;
+    margin-top: 8px
+}
+
+@media (min-width:46.25em) {
+    .AboutPage .ImgInterface2 {
+        width: 598px;
+        height: 295px;
+        margin-top: 8px
+    }
+}
+
+.AboutPage .ImgInterface3 {
+    max-width: 100%;
+    margin-top: 8px
+}
+
+@media (min-width:46.25em) {
+    .AboutPage .ImgInterface3 {
+        width: 457px;
+        height: 409px;
+        margin-top: 8px
+    }
+}
+
+.AboutPage .Centered {
+    text-align: center
+}
+
+.AboutPage .TryItButton {
+    text-align: center;
+    align-self: center
+}
+
+.AboutPage .PaddingBottom {
+    padding-bottom: 38px
+}
+
+.AboutPage .LineBreak {
+    padding-bottom: 14px
+}
+
+.AboutPage .ProfilePic {
+    width: 200px;
+    height: 200px;
+    display: block;
+    border-radius: 50%;
+    border: 3px solid #f7f7f7
+}
+
+.AboutPage .LinksWithoutUnderline {
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom: 1px solid transparent
+}
+
+.AboutPage .SocialIcon {
+    width: 20px;
+    height: 20px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    padding-top: 10px
+}
+
+.AboutPage .AlignCenter {
+    text-align: center
+}
+
+.SciencePage {
+    width: 100%;
+    margin: 0 auto 28px;
+    padding-bottom: 32px
+}
+
+@media (min-width:46.25em) {
+    .SciencePage {
+        width: 960px;
+        margin: 8px auto 54px
+    }
+}
+
+.SciencePage .Highlighted {
+    background-color: #fff200
+}
+
+.SciencePage h1 {
+    font-size: 36px;
+    line-height: 47px;
+    letter-spacing: .04em
+}
+
+.SciencePage h1,
+.SciencePage h2 {
+    font-style: normal;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    color: #0f0f21
+}
+
+.SciencePage h2 {
+    font-family: Roboto;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: .05em
+}
+
+.SciencePage .PaddingBottom {
+    padding-bottom: 38px
+}
+
+.SciencePage .LineBreak {
+    padding-bottom: 14px
+}
+
+.SciencePage .AlignCenter {
+    text-align: center
+}
+
+.ScienceAdditionalPage {
+    width: 100%;
+    margin: 0 auto 28px;
+    padding-bottom: 32px
+}
+
+@media (min-width:46.25em) {
+    .ScienceAdditionalPage {
+        width: 960px;
+        margin: 8px auto 54px
+    }
+}
+
+.ScienceAdditionalPage h1 {
+    font-size: 36px;
+    line-height: 47px;
+    letter-spacing: .04em;
+    color: #0f0f21
+}
+
+.ScienceAdditionalPage h1,
+.ScienceAdditionalPage h2 {
+    font-style: normal;
+    font-weight: 700;
+    display: flex;
+    align-items: center
+}
+
+.ScienceAdditionalPage h2 {
+    font-family: Roboto;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: .05em
+}
+
+.ScienceAdditionalPage .text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: .04em;
+    color: #38374a
+}
+
+.ScienceAdditionalPage .PaddingBottom {
+    padding-bottom: 38px
+}
+
+.ScienceAdditionalPage .AlignCenter {
+    text-align: center
+}
+
+.ForCompaniesPage {
+    width: 100%;
+    margin: auto auto 55px
+}
+
+@media (min-width:46.25em) {
+    .ForCompaniesPage {
+        width: 960px
+    }
+}
+
+.ForCompaniesPage .BenefitBox {
+    max-width: 450px;
+    align-items: center;
+    text-align: center
+}
+
+.ForCompaniesPage .Number {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    letter-spacing: .04em;
+    color: #3a4d91;
+    opacity: .5;
+    margin-right: 8px
+}
+
+@media (min-width:46.25em) {
+    .ForCompaniesPage .Number {
+        font-size: 24px;
+        line-height: 28px
+    }
+}
+
+.ForCompaniesPage .HeadingWithANumber {
+    display: flex
+}
+
+.ForCompaniesPage .ImageDimensions {
+    width: 40px;
+    height: 40px
+}
+
+.ForCompaniesPage .Heading {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: .04em
+}
+
+@media (min-width:46.25em) {
+    .ForCompaniesPage .Heading {
+        font-size: 24px;
+        line-height: 28px
+    }
+}
+
+.ForCompaniesPage .TopHeading {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 45px;
+    letter-spacing: .04em
+}
+
+.ForCompaniesPage .Text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: .04em
+}
+
+.ForCompaniesPage .Tagline {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: .04em;
+    color: #172136;
+    text-align: center;
+    padding-bottom: 20px
+}
+
+@media (min-width:46.25em) {
+    .ForCompaniesPage .Tagline {
+        font-size: 36px;
+        line-height: 47px;
+        padding-bottom: 30px
+    }
+}
+
+.ForCompaniesPage .Tagline2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: .04em;
+    color: #172136;
+    text-align: center;
+    padding: 20px 0
+}
+
+@media (min-width:46.25em) {
+    .ForCompaniesPage .Tagline2 {
+        font-size: 28px;
+        line-height: 36px;
+        padding: 30px 0
+    }
+}
+
+.ForCompaniesPage .Centered {
+    justify-content: center;
+    align-items: center
+}
+
+.ForCompaniesPage .CreateTeamProfileBox,
+.ForCompaniesPage .NeedMoreInfoBox {
+    max-width: 400px;
+    min-width: 250px;
+    text-align: center;
+    align-self: center;
+    min-height: 150px;
+    margin: 20px auto 50px
+}
+
+.ForCompaniesPage .Padding {
+    padding: 20px
+}
+
+.ForCompaniesPage .PaddingBottom {
+    padding-bottom: 25px
+}
+
+@media (min-width:46.25em) {
+    .ForCompaniesPage .PaddingBottom {
+        padding-bottom: 30px
+    }
+}
+
+.ForCompaniesPage .flex {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.ForCompaniesPage .line {
+    font-weight: 400;
+    color: #afafaf
+}
+
+.ForCompaniesPage .line,
+.ForCompaniesPage .or {
+    font-style: normal;
+    font-size: 24px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center
+}
+
+.ForCompaniesPage .or {
+    font-weight: 700;
+    color: #000
+}
+
+.ContactPage {
+    width: 100%;
+    height: 100%;
+    margin: 16px auto 28px;
+    padding-bottom: 32px
+}
+
+@media (min-width:46.25em) {
+    .ContactPage {
+        width: 960px;
+        margin: 32px auto 54px
+    }
+}
+
+.ContactPage h1 {
+    font-size: 36px;
+    line-height: 47px;
+    letter-spacing: .04em
+}
+
+.ContactPage h1,
+.ContactPage h2 {
+    font-style: normal;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    color: #0f0f21
+}
+
+.ContactPage h2 {
+    font-family: Roboto;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: .05em
+}
+
+.ContactPage .text {
+    line-height: 40px
+}
+
+.ContactPage .PaddingBottom {
+    padding-bottom: 38px
+}
+
+.ContactPage .AlignCenter {
+    text-align: center
+}
+
+.EmailSignupPage {
+    width: 100%;
+    padding-bottom: 32px;
+    margin: 0 auto 28px
+}
+
+@media (min-width:46.25em) {
+    .EmailSignupPage {
+        width: 960px;
+        margin: 8px auto 54px
+    }
+}
+
+.EmailSignupPage h1 {
+    font-size: 36px;
+    line-height: 47px;
+    letter-spacing: .04em
+}
+
+.EmailSignupPage h1,
+.EmailSignupPage h2 {
+    font-style: normal;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    color: #0f0f21
+}
+
+.EmailSignupPage h2 {
+    font-family: Roboto;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: .05em
+}
+
+.EmailSignupPage .text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: .04em;
+    color: #38374a
+}
+
+.EmailSignupPage .PaddingBottom {
+    padding-bottom: 38px
+}
+
+.EmailSignupPage .LineBreak {
+    padding-bottom: 14px
+}
+
+.EmailSignupPage .AlignCenter {
+    text-align: center
+}
+
+.EmailSignupPage #mc-embedded-subscribe-form {
+    display: inline;
+    width: auto;
+    margin-right: 10px
+}
+
+.EmailSignupPage #mergeRow-gdpr {
+    margin-top: 20px
+}
+
+.EmailSignupPage #mergeRow-gdpr fieldset label {
+    font-weight: 400
+}
+
+.EmailSignupPage #mc-embedded-subscribe-form .mc_fieldset {
+    border: none;
+    min-height: 0;
+    padding-bottom: 0
+}
+
+.EmailSignupPage #mc_embed_signup {
+    background: #fff;
+    clear: left;
+    font-size: 14px;
+    width: 100%
+}
+
+.EmailSignupPage .MailChimpStyle1 {
+    position: absolute;
+    left: -5000px
+}
+
+.CommunityPage {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto 28px;
+    padding-bottom: 32px
+}
+
+@media (min-width:46.25em) {
+    .CommunityPage {
+        width: 960px;
+        margin: 8px auto 54px
+    }
+}
+
+.CommunityPage-Container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 15px 25px
+}
+
+@media (min-width:46.25em) {
+    .CommunityPage-Container {
+        padding: 54px 50px
+    }
+}
+
+.CommunityPage h1 {
+    font-size: 36px;
+    line-height: 47px;
+    letter-spacing: .04em
+}
+
+.CommunityPage h1,
+.CommunityPage h2 {
+    font-style: normal;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    color: #0f0f21
+}
+
+.CommunityPage h2 {
+    font-family: Roboto;
+    font-size: 24px;
+    line-height: 31px;
+    letter-spacing: .05em
+}
+
+.CommunityPage .PaddingBottom {
+    padding-bottom: 28px
+}
+
+.CommunityPage .MarginBottom {
+    margin-bottom: 28px
+}
+
+.CommunityPage .AlignCenter {
+    text-align: center
+}
+
+.ForJobSeekersPage {
+    width: 100%;
+    display: inline-block;
+    margin: 0 auto 28px;
+    padding: 30px;
+    border-radius: 16px
+}
+
+@media (min-width:46.25em) {
+    .ForJobSeekersPage {
+        width: 960px;
+        margin: 8px auto 54px
+    }
+}
+
+.ForJobSeekersPage .ImgInterface1 {
+    max-width: 100%;
+    margin-top: 8px
+}
+
+@media (min-width:46.25em) {
+    .ForJobSeekersPage .ImgInterface1 {
+        width: 422px;
+        height: 349px;
+        margin-top: 16px
+    }
+}
+
+.ForJobSeekersPage .ImgInterface2 {
+    max-width: 100%;
+    margin-top: 8px
+}
+
+@media (min-width:46.25em) {
+    .ForJobSeekersPage .ImgInterface2 {
+        width: 598px;
+        height: 295px;
+        margin-top: 16px
+    }
+}
+
+.ForJobSeekersPage .ImgInterface3 {
+    max-width: 100%;
+    margin-top: 8px
+}
+
+@media (min-width:46.25em) {
+    .ForJobSeekersPage .ImgInterface3 {
+        width: 457px;
+        height: 409px;
+        margin-top: 16px
+    }
+}
+
+.ForJobSeekersPage .PaddingBottom {
+    padding-bottom: 38px
+}
+
+.ForJobSeekersPage .LineBreak {
+    padding-bottom: 14px
+}
+
+.ForJobSeekersPage .BenefitBox {
+    max-width: 450px;
+    align-items: center;
+    text-align: center
+}
+
+.ForJobSeekersPage .Number {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    letter-spacing: .04em;
+    color: #3a4d91;
+    opacity: .5;
+    margin-right: 8px
+}
+
+@media (min-width:46.25em) {
+    .ForJobSeekersPage .Number {
+        font-size: 24px;
+        line-height: 28px
+    }
+}
+
+.ForJobSeekersPage .HeadingWithANumber {
+    display: flex
+}
+
+.ForJobSeekersPage .ImageDimensions {
+    width: 40px;
+    height: 40px
+}
+
+.ForJobSeekersPage .Tagline {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: .04em;
+    color: #172136;
+    text-align: center;
+    padding-bottom: 20px
+}
+
+@media (min-width:46.25em) {
+    .ForJobSeekersPage .Tagline {
+        font-size: 36px;
+        line-height: 47px;
+        padding-bottom: 30px
+    }
+}
+
+.ForJobSeekersPage .Tagline2 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: .04em;
+    color: #172136;
+    text-align: center;
+    padding: 20px 0
+}
+
+@media (min-width:46.25em) {
+    .ForJobSeekersPage .Tagline2 {
+        font-size: 28px;
+        line-height: 36px;
+        padding: 30px 0
+    }
+}
+
+.ForJobSeekersPage .Centered {
+    text-align: center
+}
+
+.ForJobSeekersPage .CreateTeamProfileBox {
+    max-width: 400px;
+    min-width: 250px;
+    text-align: center;
+    align-self: center;
+    min-height: 150px;
+    margin: 20px auto 50px
+}
+
+.ForJobSeekersPage .TryItButton {
+    text-align: center;
+    align-self: center
+}
+
+.ForJobSeekersPage .Padding {
+    padding: 20px
+}
+
+.ForJobSeekersPage .PaddingBottom {
+    padding-bottom: 25px
+}
+
+@media (min-width:46.25em) {
+    .ForJobSeekersPage .PaddingBottom {
+        padding-bottom: 30px
+    }
+}
+
+.ForJobSeekersPage .flex {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.ForJobSeekersPage .line {
+    font-weight: 400;
+    color: #afafaf
+}
+
+.ForJobSeekersPage .line,
+.ForJobSeekersPage .or {
+    font-style: normal;
+    font-size: 24px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center
+}
+
+.ForJobSeekersPage .or {
+    font-weight: 700;
+    color: #000
+}
+
+.ForJobSeekersPage #mc-embedded-subscribe-form {
+    display: inline;
+    width: auto;
+    margin-right: 10px
+}
+
+.ForJobSeekersPage #mergeRow-gdpr {
+    margin-top: 20px
+}
+
+.ForJobSeekersPage #mergeRow-gdpr fieldset label {
+    font-weight: 400
+}
+
+.ForJobSeekersPage #mc-embedded-subscribe-form .mc_fieldset {
+    border: none;
+    min-height: 0;
+    padding-bottom: 0
+}
+
+.ForJobSeekersPage #mc_embed_signup {
+    background: #fff;
+    clear: left;
+    font-size: 14px;
+    width: 100%
+}
+
+.ForJobSeekersPage .MailChimpStyle1 {
+    position: absolute;
+    left: -5000px
+}
+
+.ForJobSeekersPage-Actions .MuiButton-root {
+    margin-bottom: 10px;
+    margin-right: 10px
+}
+
+.TermsOfServicePage {
+    width: 100%;
+    margin: 0 auto 28px;
+    padding-bottom: 32px
+}
+
+@media (min-width:46.25em) {
+    .TermsOfServicePage {
+        width: 960px;
+        margin: 8px auto 54px
+    }
+}
+
+.TermsOfServicePage h1 {
+    font-size: 36px;
+    line-height: 47px;
+    letter-spacing: .04em
+}
+
+.TermsOfServicePage h1,
+.TermsOfServicePage h2 {
+    font-style: normal;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    color: #0f0f21
+}
+
+.TermsOfServicePage h2 {
+    font-family: Roboto;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: .05em
+}
+
+.TermsOfServicePage .text {
+    line-height: 40px
+}
+
+.TermsOfServicePage .PaddingBottom {
+    padding-bottom: 38px
+}
+
+.TermsOfServicePage .AlignCenter {
+    text-align: center
+}
+
+.TermsOfServiceCustomerPage {
+    width: 100%;
+    margin: 0 auto 28px;
+    padding-bottom: 32px
+}
+
+@media (min-width:46.25em) {
+    .TermsOfServiceCustomerPage {
+        width: 960px;
+        margin: 8px auto 54px
+    }
+}
+
+.TermsOfServiceCustomerPage h1 {
+    font-size: 36px;
+    line-height: 47px;
+    letter-spacing: .04em
+}
+
+.TermsOfServiceCustomerPage h1,
+.TermsOfServiceCustomerPage h2 {
+    font-style: normal;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    color: #0f0f21
+}
+
+.TermsOfServiceCustomerPage h2 {
+    font-family: Roboto;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: .05em
+}
+
+.TermsOfServiceCustomerPage .text {
+    line-height: 40px
+}
+
+.TermsOfServiceCustomerPage .PaddingBottom {
+    padding-bottom: 38px
+}
+
+.TermsOfServiceCustomerPage .AlignCenter {
+    text-align: center
+}
+
+.PrivacyPolicyPage {
+    width: 100%;
+    margin: 0 auto 28px;
+    padding-bottom: 32px
+}
+
+@media (min-width:46.25em) {
+    .PrivacyPolicyPage {
+        width: 960px;
+        margin: 8px auto 54px
+    }
+}
+
+.PrivacyPolicyPage h1 {
+    font-size: 36px;
+    line-height: 47px;
+    letter-spacing: .04em
+}
+
+.PrivacyPolicyPage h1,
+.PrivacyPolicyPage h2 {
+    font-style: normal;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    color: #0f0f21
+}
+
+.PrivacyPolicyPage h2 {
+    font-family: Roboto;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: .05em
+}
+
+.PrivacyPolicyPage .text {
+    line-height: 40px
+}
+
+.PrivacyPolicyPage .PaddingBottom {
+    padding-bottom: 20px
+}
+
+.PrivacyPolicyPage .AlignCenter {
+    text-align: center
+}
+
+.CookiePolicyPage {
+    width: 100%;
+    margin: 0 auto 28px;
+    padding-bottom: 32px
+}
+
+@media (min-width:46.25em) {
+    .CookiePolicyPage {
+        width: 960px;
+        margin: 8px auto 54px
+    }
+}
+
+.CookiePolicyPage h1 {
+    font-size: 36px;
+    line-height: 47px;
+    letter-spacing: .04em
+}
+
+.CookiePolicyPage h1,
+.CookiePolicyPage h2 {
+    font-style: normal;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    color: #0f0f21
+}
+
+.CookiePolicyPage h2 {
+    font-family: Roboto;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: .05em
+}
+
+.CookiePolicyPage .text {
+    line-height: 40px
+}
+
+.CookiePolicyPage .PaddingBottom {
+    padding-bottom: 20px
+}
+
+.CookiePolicyPage .LineBreak {
+    padding-bottom: 14px
+}
+
+.CookiePolicyPage .AlignCenter {
+    text-align: center
+}
+
+.Footer {
+    background-color: #f6f6fa;
+    padding: 30px
+}
+
+.Footer .Title {
+    line-height: 24px
+}
+
+.Footer .Title,
+.Footer a {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: .04em;
+    color: #2f3541
+}
+
+.Footer a {
+    line-height: 32px;
+    text-decoration: none
+}
+
+.Footer a,
+.Footer a:hover {
+    border: 1px solid transparent
+}
+
+.Footer a:hover {
+    text-decoration: underline
+}
+
+.Footer a:active {
+    text-decoration: none;
+    border: 1px solid transparent
+}
+
+.Footer-Content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: baseline;
+    align-content: space-between;
+    max-width: 800px;
+    margin: 0 auto
+}
+
+@media (min-width:46.25em) {
+    .Footer-Content {
+        flex-direction: row
+    }
+}
+
+.Footer-About {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: .05em;
+    color: #2f3541
+}
+
+.Footer-About p {
+    margin-bottom: 20px
+}
+
+.Footer-Links {
+    display: flex;
+    flex-direction: column
+}
+
+.TeamPage .TeamName {
+    font-size: 20px;
+    line-height: 26px
+}
+
+@media (min-width:46.25em) {
+    .TeamPage .TeamName {
+        font-size: 24px;
+        line-height: 31px
+    }
+}
+
+.TeamPage .LineBreak {
+    padding-bottom: 14px
+}
+
+.TeamPage .DescriptionFonts {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: #000
+}
+
+.TeamPage .SectionHeadings {
+    margin-bottom: 15px
+}
+
+.TeamPage .CultureHeadings {
+    font-size: 30px;
+    line-height: 38px
+}
+
+.TeamPage .CultureHeadings,
+.TeamPage .DimensionHeadings {
+    font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", -apple-system, serif;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 15px
+}
+
+.TeamPage .DimensionHeadings {
+    font-size: 20px;
+    line-height: 30px
+}
+
+.TeamPage .PaddingBottom {
+    padding-bottom: 20px
+}
+
+.TeamPage-Headers {
+    margin-bottom: 20px
+}
+
+.TeamPage-TeamDetails {
+    margin-bottom: 50px
+}
+
+.TeamPage-TeamDetails-Section {
+    margin-bottom: 20px
+}
+
+.TeamPage-TeamDetails-Section .MuiTypography-h2 {
+    margin-bottom: 10px
+}
+
+.TeamPage-TeamDetails-Section .MuiTypography-h4 {
+    font-size: 24px
+}
+
+.TeamPage-TeamDetails-Section .MuiTypography-subtitle1 {
+    margin-bottom: 15px
+}
+
+.TeamPage-TeamDetails-Section--Question {
+    border: 1px solid #dcdcdc;
+    padding: 10px;
+    margin-bottom: 30px
+}
+
+.TeamPage-TeamDetails-Section--Question--Content {
+    width: 100%;
+    margin-bottom: 30px
+}
+
+.TeamPage-TeamDetails-Section--Image {
+    max-height: 30px;
+    margin-left: 10px
+}
+
+.SectionPreferences {
+    margin: auto;
+    padding: 20px 0
+}
+
+.SectionPreferences-SliderContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start
+}
+
+@media (min-width:46.25em) {
+    .SectionPreferences-SliderContainer {
+        width: 550px
+    }
+}
+
+.SectionPreferences .CategoryName {
+    font-weight: 500;
+    padding: 40px 0 8px
+}
+
+.SectionPreferences .SubCategoryTitle {
+    font-weight: 500
+}
+
+.SectionPreferences .MuiDivider-root {
+    margin: 0 0 10px
+}
+
+.SectionPreferences .PaddingBottom {
+    padding-bottom: 30px
+}
+
+.SectionPreferences .LineBreak {
+    padding-bottom: 14px
+}
+
+.SectionPreferences--Question {
+    border: 1px solid #ededed;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px
+}
+
+.SectionPreferences--Question--Content {
+    width: 100%;
+    margin-bottom: 54px
+}
+
+.SectionPreferences--Image {
+    height: 20px;
+    width: 20px;
+    margin-left: 10px
+}
+
+.DetailSection {
+    padding: 20px 0
+}
+
+.DetailSection .SectionTextContainer {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 100%
+}
+
+@media (min-width:46.25em) {
+    .DetailSection .SectionTextContainer {
+        font-size: 18px;
+        line-height: 27px;
+        max-width: 660px
+    }
+}
+
+.DetailSection .DetailSection-Tags .MuiChip-root {
+    align-self: center;
+    margin-bottom: 5px;
+    border-color: #d3d7df
+}
+
+.DetailSection .MuiDivider-root {
+    margin: 0 0 10px
+}
+
+.DetailSection-Heading {
+    padding-bottom: 6px
+}
+
+@media (min-width:46.25em) {
+    .DetailSection-Heading {
+        padding-bottom: 16px
+    }
+}
+
+.DetailSection-Image {
+    height: 20px;
+    width: 20px;
+    margin-left: 15px
+}
+
+.DetailSection .BucketTags-bucket-1,
+.DetailSection .BucketTags-bucket-2,
+.DetailSection .BucketTags-bucket-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start
+}
+
+.DetailSection .BucketTags-bucket-1 .MuiChip-root {
+    border: none;
+    color: #e5fff2;
+    background: #009d45;
+    align-self: flex-start
+}
+
+.DetailSection .BucketTags-bucket-2 .MuiChip-root {
+    border: none;
+    color: #00863e;
+    background: #4ddf90;
+    align-self: flex-start
+}
+
+.DetailSection .BucketTags-bucket-3 .MuiChip-root {
+    border: none;
+    color: #00aa4e;
+    background: #bcf2d5;
+    align-self: flex-start
+}
+
+.Highlight.MuiChip-root {
+    color: #fff;
+    background: #eb5757;
+    border-radius: 6px;
+    font-size: 12px;
+    padding: 2px;
+    height: auto;
+    margin: 0 0 5px 8px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: .04em
+}
+
+.Highlight .MuiChip-label {
+    padding: 2px 6px;
+    line-height: 1
+}
+
+.UserProfilePage {
+    width: 100%;
+    margin: 0 auto 25px;
+    padding: 10px
+}
+
+@media (min-width:46.25em) {
+    .UserProfilePage {
+        width: 960px;
+        margin: 25px auto 55px;
+        padding: 50px
+    }
+}
+
+.UserProfilePage-IncompleteProfile {
+    padding: 20px
+}
+
+@media (min-width:61.25em) {
+    .UserProfilePage-IncompleteProfile {
+        padding: 54px
+    }
+}
+
+.UserProfilePage-IncompleteProfile .SmallPaddingBottom {
+    padding-bottom: 24px
+}
+
+.UserProfilePage-IncompleteProfile .ButtonMarginRight {
+    margin-right: 24px
+}
+
+.UserProfilePage .DescriptionText {
+    max-width: 640px
+}
+
+.UserProfilePage .PaddingBottom {
+    padding-bottom: 60px
+}
+
+.UserProfilePage .PaddingTop {
+    padding-top: 20px
+}
+
+.UserProfilePage .LineBreak {
+    padding-bottom: 14px
+}
+
+.UserProfilePage .Name {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 60px;
+    letter-spacing: .04em;
+    color: #2f3541
+}
+
+@media (min-width:46.25em) {
+    .UserProfilePage .Name {
+        font-size: 40px
+    }
+}
+
+.UserProfilePage-Headers {
+    margin-bottom: 20px
+}
+
+@media (min-width:61.25em) {
+    .UserProfilePage-Headers .MuiGrid-item:last-child {
+        text-align: right
+    }
+}
+
+.UserProfilePage-Headers .CommonSections {
+    margin-bottom: 50px
+}
+
+.UserProfilePage .CommonSections-Details--Question {
+    border: 1px solid #dcdcdc;
+    padding: 10px;
+    margin-bottom: 30px
+}
+
+.UserProfilePage .CommonSections-Details--Question--Content {
+    width: 100%;
+    margin-bottom: 30px
+}
+
+.UserProfilePage .CommonSections-Details--Image {
+    max-height: 30px;
+    margin-left: 10px
+}
+
+.DeleteProfile-Link .MuiButton-label {
+    color: #7c8194
+}
+
+.DeleteProfile-ResponseMessage.MuiTypography-root {
+    color: #8b0000
+}
+
+.DeleteProfile-Modal {
+    padding: 30px;
+    text-align: center
+}
+
+.DeleteProfile-Modal .MuiButton-contained {
+    color: #fff;
+    background: red
+}
+
+.DeleteProfile-Modal .MuiButton-contained:hover {
+    color: #fff;
+    background: #e60000
+}
+
+.DeleteProfile-Modal .MuiButton-contained:active {
+    color: #fff;
+    background: red
+}
+
+.DeleteProfile-Modal p {
+    margin: 20px 0
+}
+
+.DeleteProfile-Modal button {
+    margin: 0 10px
+}
+
+.UIPage {
+    width: 100%
+}
+
+@media (min-width:46.25em) {
+    .UIPage {
+        width: 600px
+    }
+}
+
+.UIPage .MuiPaper-root {
+    margin: 30px;
+    padding: 20px
+}
+
+.UIPage p {
+    display: flex;
+    margin: 10px;
+    justify-content: space-between
+}
+
+.EngagedEmployer {
+    display: flex;
+    align-content: center;
+    vertical-align: middle;
+    align-items: baseline;
+    justify-content: flex-start;
+    padding: 0 0 20px;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: #2f3541
+}
+
+.EngagedEmployer .Sign {
+    color: #009929;
+    font-size: 48px;
+    vertical-align: middle
+}
+
+.EngagedEmployer span {
+    color: transparent;
+    text-shadow: 0 0 0 #2f3541;
+    margin-right: 3px
+}
+
+.CompanyDetails .Logo {
+    width: 75px;
+    height: 75px;
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border: 1px solid #f2eef9;
+    box-sizing: border-box;
+    border-radius: 13px;
+    margin: 6px 0 12px
+}
+
+@media (min-width:46.25em) {
+    .CompanyDetails .Logo {
+        width: 100px;
+        height: 100px;
+        margin: 20px 0 24px
+    }
+}
+
+.CompanyDetails .CompanyName {
+    font-size: 20px;
+    line-height: 26px;
+    margin: 10px 0 4px
+}
+
+@media (min-width:46.25em) {
+    .CompanyDetails .CompanyName {
+        font-size: 28px;
+        line-height: 36px;
+        margin: 20px 0 8px
+    }
+}
+
+.CompanyDetails .Description {
+    font-size: 16px;
+    line-height: 24px
+}
+
+@media (min-width:46.25em) {
+    .CompanyDetails .Description {
+        font-size: 18px;
+        line-height: 27px
+    }
+}
+
+.CompanyDetails .PrimaryCompanyTags {
+    line-height: 30px;
+    flex-direction: column
+}
+
+.CompanyDetails .DescriptionText {
+    max-width: 640px
+}
+
+.CompanyDetails .MuiLinearProgress-root {
+    margin: 20px 50px
+}
+
+.CompanyDetails .SectionHeadings {
+    margin-bottom: 15px
+}
+
+.CompanyDetails .LineBreak {
+    padding-bottom: 14px
+}
+
+.CompanyDetails .Flex {
+    display: flex;
+    align-content: center;
+    vertical-align: middle;
+    align-items: baseline;
+    justify-content: flex-start;
+    padding: 0 0 10px
+}
+
+.CompanyDetails .VerticalCenter {
+    display: inline-block;
+    vertical-align: middle
+}
+
+.CompanyDetails .PaddingRight {
+    padding-right: 50px
+}
+
+.CompanyDetails-Logo-Column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center
+}
+
+.CompanyDetails-Main img {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    max-width: 150px;
+    max-height: 150px
+}
+
+.CompanyDetails-Main {
+    padding: 0
+}
+
+.CompanyDetails-Main-Info {
+    margin-bottom: 20px
+}
+
+@media (min-width:46.25em) {
+    .CompanyDetails-Main {
+        flex-direction: row
+    }
+}
+
+.CompanyDetails-TeamSection {
+    margin-bottom: 0;
+    padding: 10px 0
+}
+
+.CompanyDetails-TeamSection-Teams {
+    margin: 24px 0
+}
+
+.CompanyDetails-TeamSection-Teams-TeamInfo {
+    flex-wrap: nowrap
+}
+
+.CompanyDetails-TeamSection-Teams-TeamInfo .MuiTypography-body1 {
+    margin-bottom: 20px;
+    flex: 1 0
+}
+
+.CompanyDetails-TeamSection-Teams-TeamInfo .MuiButton-root {
+    align-self: flex-start
+}
+
+.CompanyDetails-Section {
+    padding: 0 10px
+}
+
+.CompanyDetails-Section--Image {
+    max-height: 20px;
+    max-width: 20px;
+    margin-left: 15px
+}
+
+.CompanyDetails-TagsPrimary {
+    display: flex;
+    flex-direction: column;
+    align-self: center
+}
+
+.CompanyDetails-TagsPrimary .MuiChip-root {
+    align-self: center;
+    margin-bottom: 5px;
+    border-color: #d3d7df
+}
+
+.ActivelyHiring {
+    display: flex;
+    align-content: center;
+    vertical-align: middle;
+    align-items: baseline;
+    justify-content: flex-start;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: #2f3541
+}
+
+.ActivelyHiring .Image {
+    vertical-align: baseline;
+    margin-right: 8px;
+    -webkit-filter: opacity(.7);
+    filter: opacity(.7)
+}
+
+.TeamShortInfo {
+    position: relative
+}
+
+.TeamShortInfo:hover {
+    transform: translateY(-6px)
+}
+
+.TeamShortInfo .TheTeamCard {
+    position: relative;
+    height: 100%;
+    max-width: 500px;
+    min-width: 300px;
+    box-shadow: 0 16px 20px rgba(15, 15, 33, .2);
+    border-radius: 14px;
+    border: 1px;
+    border-style: solid;
+    border-color: #f2f2f2
+}
+
+.TeamShortInfo .TheTeamCard:hover {
+    cursor: pointer;
+    transform: translateY(0)
+}
+
+@media (min-width:46.25em) {
+    .TeamShortInfo {
+        height: 100%
+    }
+}
+
+.TeamShortInfo .CardContents {
+    padding: 20px 16px
+}
+
+.TeamShortInfo .CardContents:hover {
+    transform: translateY(0)
+}
+
+@media (min-width:46.25em) {
+    .TeamShortInfo .CardContents {
+        padding: 28px 28px 0;
+        margin-bottom: 8px
+    }
+}
+
+.TeamShortInfo .TeamInfo-Image {
+    width: 56px;
+    height: 56px;
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border: 1px solid #f2eef9;
+    box-sizing: border-box;
+    border-radius: 13px
+}
+
+@media (min-width:46.25em) {
+    .TeamShortInfo .TeamInfo-Image {
+        width: 72px;
+        height: 72px
+    }
+}
+
+.TeamShortInfo .TeamDescription {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400px
+}
+
+.TeamShortInfo .TeamName {
+    font-size: 18px;
+    line-height: 24px
+}
+
+.MatchScoreTeamCard.MuiChip-root {
+    position: absolute;
+    right: 0;
+    top: 12px;
+    padding: 0;
+    border: none
+}
+
+@media (min-width:46.25em) {
+    .MatchScoreTeamCard.MuiChip-root {
+        right: 0;
+        top: 12px
+    }
+}
+
+.MatchScoreTeamCard .MuiChip-label {
+    width: 115px;
+    height: 20px;
+    background: #f9f7fe;
+    border-radius: 4px 0 0 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    padding: 2px
+}
+
+.MatchScoreTeamCard-scoreText {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: .04em;
+    order: 0;
+    align-self: center;
+    margin-right: 4px
+}
+
+.MatchScoreTeamCard-descText,
+.MatchScoreTeamCard-scoreText {
+    font-family: Roboto;
+    font-style: normal;
+    color: #2f3541;
+    vertical-align: middle;
+    display: inline-block
+}
+
+.MatchScoreTeamCard-descText {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: .05em;
+    order: 1
+}
+
+.MatchScoreTeamCard-logoSrc {
+    max-height: 18px;
+    align-self: center;
+    vertical-align: middle;
+    margin-right: 8px
+}
+
+.TeamNotCreated {
+    position: relative;
+    padding: 10px;
+    border: 1px solid #d3d3d3;
+    border-radius: 8px;
+    flex-wrap: nowrap
+}
+
+@media (min-width:46.25em) {
+    .TeamNotCreated {
+        padding: 20px
+    }
+}
+
+.TeamNotCreated .TeamDescription {
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 16px
+}
+
+.PageNotFound {
+    width: 100%;
+    height: 100%;
+    margin: 16px auto 28px;
+    padding-bottom: 32px
+}
+
+@media (min-width:46.25em) {
+    .PageNotFound {
+        width: 600px;
+        margin: 32px auto 54px
+    }
+}
+
+.PageNotFound h1 {
+    font-size: 36px;
+    line-height: 47px;
+    letter-spacing: .04em
+}
+
+.PageNotFound h1,
+.PageNotFound h2 {
+    font-style: normal;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    color: #0f0f21
+}
+
+.PageNotFound h2 {
+    font-family: Roboto;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: .05em
+}
+
+.PageNotFound .text {
+    line-height: 40px
+}
+
+.PageNotFound .PaddingBottom {
+    padding-bottom: 38px
+}
+
+.PageNotFound .AlignCenter {
+    text-align: center
+}
