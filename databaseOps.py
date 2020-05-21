@@ -6,26 +6,21 @@
 """
 
 
-import mysql.connector
 
 
 def addToCompanies(logoname, CompanyNames, Locations, Tags, availableJobs, CompanySize, details):
+  import mysql.connector
   mydb = mysql.connector.connect(
       host="localhost",
       user="root",
       passwd="",
       database="covid"
   )
-
   mycursor = mydb.cursor()
-
-  sql = "INSERT INTO company (logoname, CompanyNames, Locations, Tags, availableJobs, CompanySize, details) VALUES (%s, %s, %s, %s, int(%s), int(%s), %s)"
-  val = (logoname, CompanyNames, Locations, Tags, availableJobs, CompanySize, details)
+  sql = "INSERT INTO company (logoname, CompanyNames, Locations, Tags, availableJobs, CompanySize, details) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+  val = (logoname, CompanyNames, Locations, Tags, int(availableJobs), int(CompanySize), details)
   mycursor.execute(sql, val)
-
   mydb.commit()
-
-
 
 
 def retrieveCompaniesForHome():
@@ -60,6 +55,4 @@ def retrieveCompaniesForHome():
 if __name__ == '__main__':
   # logoname, CompanySize, CompanyNames, Locations, Tags, availableJobs = retrieveCompaniesForHome()
   # print("\n", logoname, "\n", CompanySize, "\n", CompanyNames, "\n", Locations, "\n", Tags, "\n", availableJobs)
-
-  addToCompanies("4.gif", "Adobe", "Chennai, TN", "Open-source orientation,Very collaborative,Internet Software,AWS,Chef,Kubernetes",
-                 2, 5000, "Hello")
+  addToCompanies("4.gif", "Adobe", "Chennai, TN", "Open-source orientation,Very collaborative,Internet Software,AWS,Chef,Kubernetes",2, 5000, "Hello")

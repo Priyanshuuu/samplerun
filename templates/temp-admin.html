@@ -141,22 +141,25 @@
 </style>
 
 <body>
-    <br><br><br>
+    <br>
     <div class="form-style-5">
-        <form>
-            <fieldset>
-                <legend><span class="number">1</span> Basic Details</legend>
-                <input type="text" name="field1" placeholder="Company Name *">
-                <input type="email" name="field2" placeholder="Company Tags (Seperate multiple tags with comma ',' ) *">
-            </fieldset>
-            <fieldset>
-                <legend><span class="number">2</span> Upload Logo (*.jpg, *.png, *.gif)</legend>
-                <input type='file'>
-            </fieldset><br><br>
-            <fieldset>
-                <legend><span class="number">3</span> About the Company</legend>
-                <textarea name="field3" placeholder="About the Company"></textarea>
-            </fieldset>
+        <form method="POST" action="adminuploader" enctype="multipart/form-data">
+            <br>
+            <legend><span class="number">1</span> Basic Details</legend>
+            <input type="text" name="CompanyName" placeholder="Company Name *" required>
+            <input type="text" name="Location" placeholder="Company Location *" required>
+            <input type="text" name="CompanySize" placeholder="Company Size *" required>
+            <input type="text" name="availableJobs" placeholder="Number of available Jobs *" required>
+            <input type="text" name="Tags" placeholder="Company Tags (Seperate multiple tags with comma ',' ) *" required>
+            <br>
+            <legend><span class="number">2</span> Upload Logo (*.jpg, *.png, *.gif)</legend>
+            <input type="file" name="file" required>
+            <br>
+            <br><br>
+            <br>
+            <legend><span class="number">3</span> About the Company</legend>
+            <textarea name="details" placeholder="About the Company"></textarea>
+            <br>
             <input type="submit" value="Add Company" />
         </form>
     </div>
