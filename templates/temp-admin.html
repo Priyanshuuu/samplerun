@@ -141,41 +141,23 @@
 </style>
 
 <body>
+    <br><br><br>
     <div class="form-style-5">
         <form>
             <fieldset>
                 <legend><span class="number">1</span> Basic Details</legend>
                 <input type="text" name="field1" placeholder="Company Name *">
-                <input type="email" name="field2" placeholder="Company Email *">
-                <textarea name="field3" placeholder="Upload Logo"></textarea>
-                <input type="email" name="field2" placeholder="Company Email *">
-                <textarea name="field3" placeholder="About yourself"></textarea>
-                <label for="job">Interests:</label>
-                <select id="job" name="field4">
-                    <optgroup label="Indoors">
-                         <option value="fishkeeping">Fishkeeping</option>
-                         <option value="reading">Reading</option>
-                         <option value="boxing">Boxing</option>
-                         <option value="debate">Debate</option>
-                         <option value="gaming">Gaming</option>
-                         <option value="snooker">Snooker</option>
-                         <option value="other_indoor">Other</option>
-                    </optgroup>
-                    <optgroup label="Outdoors">
-                         <option value="football">Football</option>
-                         <option value="swimming">Swimming</option>
-                         <option value="fishing">Fishing</option>
-                         <option value="climbing">Climbing</option>
-                         <option value="cycling">Cycling</option>
-                         <option value="other_outdoor">Other</option>
-                    </optgroup>
-               </select>
+                <input type="email" name="field2" placeholder="Company Tags (Seperate multiple tags with comma ',' ) *">
             </fieldset>
             <fieldset>
-                <legend><span class="number">2</span> Additional Info</legend>
-                <textarea name="field3" placeholder="About Your School"></textarea>
+                <legend><span class="number">2</span> Upload Logo (*.jpg, *.png, *.gif)</legend>
+                <input type='file'>
+            </fieldset><br><br>
+            <fieldset>
+                <legend><span class="number">3</span> About the Company</legend>
+                <textarea name="field3" placeholder="About the Company"></textarea>
             </fieldset>
-            <input type="submit" value="Apply" />
+            <input type="submit" value="Add Company" />
         </form>
     </div>
 </body>
