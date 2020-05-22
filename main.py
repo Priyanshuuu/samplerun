@@ -19,7 +19,7 @@ def genTimeHash(fname):
      return str(hash.hexdigest()[:10])
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/home', methods=['GET', 'POST'])
 def login():
      import databaseOps as db
      import random # Only for SQL-Less testing, remove otherwise
