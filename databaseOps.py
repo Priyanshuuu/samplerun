@@ -33,9 +33,9 @@ def retrieveCompaniesForHome():
       port='3306',
       database="covid"
       )
-
-
-  TS.run_sql_file('company.sql', mydb, 'company') # For performing test with random database sample, comment this during production. 
+    
+  # For performing test with random database sample, comment this during production. 
+  #TS.run_sql_file('company.sql', mydb, 'company') 
 
   mycursor = mydb.cursor()
   mycursor.execute("SELECT logoname, CompanyNames, Locations, Tags, availableJobs, CompanySize FROM company order by CompanyNames")
@@ -84,8 +84,8 @@ def retrieveProjectsForHome():
       port='3306',
       database="covid"
       )
-  
-  TS.run_sql_file('projects.sql', mydb, 'projects')  # For performing test with random database sample, comment this during production. 
+  # For performing test with random database sample, comment this during production.
+  #TS.run_sql_file('projects.sql', mydb, 'projects')   
 
   mycursor = mydb.cursor()
   mycursor.execute("SELECT logoname, ProjectNames, Locations, Tags, availableVacancies, ProjectSize FROM projects order by ProjectNames")
