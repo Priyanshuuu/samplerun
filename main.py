@@ -7,7 +7,7 @@
 
 import time
 from flask import Flask, render_template, redirect, url_for, request,session,make_response,flash
-from werkzeug import secure_filename
+from werkzeug.utils import secure_filename
 app = Flask(__name__)
 
 
@@ -18,7 +18,7 @@ def genTimeHash(fname):
      hash.update(tempstr)
      return str(hash.hexdigest()[:10])
 
-
+@app.route('/')
 @app.route('/home', methods=['GET', 'POST'])
 def login():
      import databaseOps as db
@@ -37,6 +37,23 @@ def login():
           CompanySize=CompanySize
      )
 
+@app.route('/projects', methods=['GET', 'POST'])
+def projects():
+     import databaseOps as db
+     import random # Only for SQL-Less testing, remove otherwise
+     logoname, ProjectSize, ProjectNames, Locations, Tags, availableVacancies = db.retrieveProjectsForHome()
+     totalSize = len(ProjectNames)
+
+     return render_template(
+          'projects.html', 
+          len=totalSize,
+          logoname=logoname, 
+          ProjectNames=ProjectNames, 
+          Locations=Locations, 
+          Tags=Tags, 
+          availableVacancies=availableVacancies,
+          ProjectSize=ProjectSize
+     )
 
 @app.route('/admin')
 def tempadmin():
@@ -50,8 +67,9 @@ def adminupload():
           # logoname = request.logoname
           f = request.files['file']
           logoname = genTimeHash(str(f.filename))
-          # app.config['UPLOAD_FOLDER']="static/uploads/logos/"
-          app.config['UPLOAD_FOLDER'] = "U://Users//Krishna_Alagiri//Projects//Web//Scolarly_Science//COVID-Opportunities//static//uploads//logos"
+          app.config['UPLOAD_FOLDER']="static//uploads//logo/"
+          # app.config['UPLOAD_FOLDER'] = "F://Scholarly Science Projets//COVID-Opportunities//static//uploads//logos"
+          # app.config['UPLOAD_FOLDER'] = "U://Users//Krishna_Alagiri//Projects//Web//Scolarly_Science//COVID-Opportunities//static//uploads//logos"
           f.save(app.config['UPLOAD_FOLDER'], logoname)
           CompanyName = request.form['CompanyName']
           Location = request.form['Location']
@@ -68,4 +86,7 @@ def adminupload():
 
 
 if __name__ == '__main__':
-     app.run(host='0.0.0.0', use_reloader=True, debug=True)
+     # app.run(host='0.0.0.0', use_reloader=True, debug=True)
+     import webbrowser
+     webbrowser.open("http://127.0.0.1:5000/")
+     app.run(use_reloader=True, debug=True)
