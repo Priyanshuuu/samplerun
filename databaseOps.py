@@ -8,12 +8,22 @@
 
 import test as TS
 
+
+def retDBcreds():
+  host = "127.0.0.1"
+  user = "root"
+  passwd = ""
+  port = '3306'
+  return([host, user, passwd, port])
+
+
+
 def addToCompanies(logoname, CompanyNames, Locations, Tags, availableJobs, CompanySize, details):
   import mysql.connector
   mydb = mysql.connector.connect(
       host="127.0.0.1",
       user="root",
-      passwd="Priyanshu25@",
+      passwd="",
       port='3306',
       database="covid"
   )
@@ -26,17 +36,14 @@ def addToCompanies(logoname, CompanyNames, Locations, Tags, availableJobs, Compa
 
 def retrieveCompaniesForHome():
   import mysql.connector
+  host, user, passwd, port = retDBcreds()
   mydb = mysql.connector.connect(
-      host="127.0.0.1",
-      user="root",
-      passwd="Priyanshu25@",
-      port='3306',
-      database="covid"
-      )
-    
-  # For performing test with random database sample, comment this during production. 
-  #TS.run_sql_file('company.sql', mydb, 'company') 
-
+    host=host,
+    user=user,
+    passwd=passwd,
+    port=port,
+    database="covid"
+  )
   mycursor = mydb.cursor()
   mycursor.execute("SELECT logoname, CompanyNames, Locations, Tags, availableJobs, CompanySize FROM company order by CompanyNames")
   complist = mycursor.fetchall()
@@ -47,7 +54,7 @@ def retrieveCompaniesForHome():
   Tags = []
   availableJobs = []
   for x in complist:
-    logoname.append('uploads/logos/'+x[0])  # logoname with extn (1.gif etc)
+    logoname.append(x[0])  # logoname with extn (1.gif etc)
     CompanyNames.append(x[1]) # company name
     Locations.append(x[2]) # location of company
     Tags.append(x[3].split(",")) # tags associated
@@ -63,7 +70,7 @@ def addToProjects(logoname, ProjectNames, Locations, Tags, availableVacancies, P
   mydb = mysql.connector.connect(
       host="127.0.0.1",
       user="root",
-      passwd="Priyanshu25@",
+      passwd="",
       port='3306',
       database="covid"
   )
@@ -77,13 +84,14 @@ def addToProjects(logoname, ProjectNames, Locations, Tags, availableVacancies, P
 
 def retrieveProjectsForHome():
   import mysql.connector
+  host, user, passwd, port = retDBcreds()
   mydb = mysql.connector.connect(
-      host="127.0.0.1",
-      user="root",
-      passwd="Priyanshu25@",
-      port='3306',
-      database="covid"
-      )
+    host=host,
+    user=user,
+    passwd=passwd,
+    port=port,
+    database="covid"
+  )
   # For performing test with random database sample, comment this during production.
   #TS.run_sql_file('projects.sql', mydb, 'projects')   
 

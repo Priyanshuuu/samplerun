@@ -18,7 +18,7 @@ def genTimeHash(fname):
      hash.update(tempstr)
      return str(hash.hexdigest()[:10])
 
-@app.route('/')
+
 @app.route('/home', methods=['GET', 'POST'])
 def login():
      import databaseOps as db
@@ -37,10 +37,10 @@ def login():
           CompanySize=CompanySize
      )
 
-@app.route('/projects', methods=['GET', 'POST'])
+
+@app.route('/projects')
 def projects():
      import databaseOps as db
-     import random # Only for SQL-Less testing, remove otherwise
      logoname, ProjectSize, ProjectNames, Locations, Tags, availableVacancies = db.retrieveProjectsForHome()
      totalSize = len(ProjectNames)
 
@@ -55,6 +55,7 @@ def projects():
           ProjectSize=ProjectSize
      )
 
+
 @app.route('/admin')
 def tempadmin():
      return render_template('temp-admin.html')
@@ -64,29 +65,23 @@ def tempadmin():
 def adminupload():
      if request.method == 'POST':
           import databaseOps as db
-          # logoname = request.logoname
-          f = request.files['file']
-          logoname = genTimeHash(str(f.filename))
-          app.config['UPLOAD_FOLDER']="static//uploads//logo/"
-          # app.config['UPLOAD_FOLDER'] = "F://Scholarly Science Projets//COVID-Opportunities//static//uploads//logos"
-          # app.config['UPLOAD_FOLDER'] = "U://Users//Krishna_Alagiri//Projects//Web//Scolarly_Science//COVID-Opportunities//static//uploads//logos"
-          f.save(app.config['UPLOAD_FOLDER'], logoname)
+          logoname = request.form['logoname']
           CompanyName = request.form['CompanyName']
           Location = request.form['Location']
           Tags = request.form['Tags']
           availableJobs = request.form['availableJobs']
           CompanySize = request.form['CompanySize']
           details = request.form['details']
-          #try:
-          db.addToCompanies(logoname, CompanyName, Location, Tags, availableJobs, CompanySize, details)
-          return 'Entry successful'
-          #except:
-          #     return 'Entry unsuccessful'
+          try:
+               db.addToCompanies(logoname, CompanyName, Location, Tags, availableJobs, CompanySize, details)
+               return 'Entry successful'
+          except:
+               return 'Entry unsuccessful'
 
 
 
 if __name__ == '__main__':
-     # app.run(host='0.0.0.0', use_reloader=True, debug=True)
      import webbrowser
-     webbrowser.open("http://127.0.0.1:5000/")
-     app.run(use_reloader=True, debug=True)
+     #webbrowser.open("http://127.0.0.1:5000/home")
+     app.run(host='0.0.0.0', use_reloader=True, debug=True)
+     #app.run(use_reloader=True, debug=True)
