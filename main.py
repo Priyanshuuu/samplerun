@@ -7,7 +7,7 @@
 
 import time
 from flask import Flask, render_template, redirect, url_for, request,session,make_response,flash
-from werkzeug import secure_filename
+from werkzeug.utils import secure_filename
 app = Flask(__name__)
 
 
@@ -38,6 +38,24 @@ def login():
      )
 
 
+@app.route('/projects')
+def projects():
+     import databaseOps as db
+     logoname, ProjectSize, ProjectNames, Locations, Tags, availableVacancies = db.retrieveProjectsForHome()
+     totalSize = len(ProjectNames)
+
+     return render_template(
+          'projects.html', 
+          len=totalSize,
+          logoname=logoname, 
+          ProjectNames=ProjectNames, 
+          Locations=Locations, 
+          Tags=Tags, 
+          availableVacancies=availableVacancies,
+          ProjectSize=ProjectSize
+     )
+
+
 @app.route('/admin')
 def tempadmin():
      return render_template('temp-admin.html')
@@ -47,25 +65,23 @@ def tempadmin():
 def adminupload():
      if request.method == 'POST':
           import databaseOps as db
-          # logoname = request.logoname
-          f = request.files['file']
-          logoname = genTimeHash(str(f.filename))
-          # app.config['UPLOAD_FOLDER']="static/uploads/logos/"
-          app.config['UPLOAD_FOLDER'] = "U://Users//Krishna_Alagiri//Projects//Web//Scolarly_Science//COVID-Opportunities//static//uploads//logos"
-          f.save(app.config['UPLOAD_FOLDER'], logoname)
+          logoname = request.form['logoname']
           CompanyName = request.form['CompanyName']
           Location = request.form['Location']
           Tags = request.form['Tags']
           availableJobs = request.form['availableJobs']
           CompanySize = request.form['CompanySize']
           details = request.form['details']
-          #try:
-          db.addToCompanies(logoname, CompanyName, Location, Tags, availableJobs, CompanySize, details)
-          return 'Entry successful'
-          #except:
-          #     return 'Entry unsuccessful'
+          try:
+               db.addToCompanies(logoname, CompanyName, Location, Tags, availableJobs, CompanySize, details)
+               return 'Entry successful'
+          except:
+               return 'Entry unsuccessful'
 
 
 
 if __name__ == '__main__':
+     import webbrowser
+     #webbrowser.open("http://127.0.0.1:5000/home")
      app.run(host='0.0.0.0', use_reloader=True, debug=True)
+     #app.run(use_reloader=True, debug=True)
