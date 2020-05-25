@@ -1,0 +1,373 @@
+<!--
+    @title: Details Page
+    @tag: HTML/CSS
+    @author: Krishnakanth Alagiri
+    @gh-profile: K-Kraken
+    @desc: Made for flask
+-->
+
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <title>Job Details - COVID Opportunities</title>
+    <!-- Meta Start -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Meta Ends-->
+
+
+    <!-- CSS Start -->
+    <link href="https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,200;0,300;0,400;0,500;0,600;0,900;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
+    <link rel="stylesheet" href="/static/assets/css/details.css">
+    <!-- CSS Ends-->
+
+    <!-- Iconsets Start -->
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ url_for('static', filename='./assets/img/icons/apple-icon-57x57.png')}}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ url_for('static', filename='./assets/img/icons/apple-icon-60x60.png')}}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ url_for('static', filename='./assets/img/icons/apple-icon-72x72.png')}}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static', filename='./assets/img/icons/apple-icon-76x76.png')}}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static', filename='./assets/img/icons/apple-icon-114x114.png')}}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ url_for('static', filename='./assets/img/icons/apple-icon-120x120.png')}}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename='./assets/img/icons/apple-icon-144x144.png')}}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename='./assets/img/icons/apple-icon-152x152.png')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='./assets/img/icons/apple-icon-180x180.png')}}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ url_for('static', filename='./assets/img/icons/android-icon-192x192.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='./assets/img/icons/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ url_for('static', filename='./assets/img/icons/favicon-96x96.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='./assets/img/icons/favicon-16x16.png')}}">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <!-- Iconsets Ends-->
+
+    <style>
+         ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+         ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+        
+         ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        
+        @media only screen and (max-device-width: 480px) {
+            .Filters {
+                display: none;
+            }
+        }
+        
+        .btn {
+            background: #212121;
+        }
+        
+        .btn::before {
+            /* fallback for old browsers */
+            background: #141E30;
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: -webkit-linear-gradient(to right, #243B55, #141E30);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: linear-gradient(to right, #243B55, #141E30);
+        }
+        
+        .section-overly::before {
+            /* fallback for old browsers */
+            background: rgba(20, 30, 48, 0.8);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: -webkit-linear-gradient(to right, rgba(36, 59, 85, 0.8), rgba(20, 30, 48, 0.8));
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: linear-gradient(to right, rgba(36, 59, 85, 0.8), rgba(20, 30, 48, 0.8));
+        }
+        
+        #scrollUp {
+            background: #212121;
+        }
+        
+        .luxbar-brand {
+            font-size: 1em;
+        }
+        /* Style the button that is used to open and close the collapsible content */
+        
+        .collapsible {
+            background-color: hsl(0, 0%, 23%);
+            color: #fff;
+            padding: 1.125em;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 0.85em;
+            letter-spacing: 0.0625em;
+            line-height: 0;
+        }
+        /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+        
+        .active,
+        .collapsible:hover {
+            /* fallback for old browsers */
+            background: #141E30;
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: -webkit-linear-gradient(to right, #243B55, #141E30);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: linear-gradient(to right, #243B55, #141E30);
+        }
+        /* Style the collapsible content. Note: hidden by default */
+        
+        .collapsible:after {
+            content: '\02795';
+            /* Unicode character for "plus" sign (+) */
+            font-size: 0.8125em;
+            color: white;
+            float: right;
+            margin-left: 0.3125em;
+        }
+        
+        .active:after {
+            content: "\2796";
+            /* Unicode character for "minus" sign (-) */
+        }
+        
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+        
+        .tags .tag {
+            margin-right: 0.4em;
+            margin-bottom: 0.65em;
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 0.35em 0.6em;
+            border-radius: 6px;
+            color: #212121;
+            background: #f1f1f1;
+            transition: all 0.3s;
+            -webkit-transition: all 0.3s;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <!-- Header Start -->
+        <div class="Header">
+            <header id="luxbar" class="luxbar-fixed">
+                <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox" />
+                <div class="luxbar-menu luxbar-menu-right luxbar-menu-dark">
+                    <ul class="luxbar-navigation">
+                        <li class="luxbar-header">
+                            <a href="#" class="luxbar-brand">COVID Opportunities</a>
+                            <label class="luxbar-hamburger luxbar-hamburger-spin" id="luxbar-hamburger" for="luxbar-checkbox">
+                                <span></span> </label>
+                        </li>
+                        <li class="luxbar-item"><a href="/home">Companies</a></li>
+                        <li class="luxbar-item"><a href="/projects">Projects</a></li>
+                        <li class="luxbar-item"><a href="#">Chats</a></li>
+                        <li class="luxbar-item"><a href="#">Profile</a></li>
+                        <li class="luxbar-item"><a href="/login">Login</a></li>
+                    </ul>
+                </div>
+            </header>
+        </div>
+    </header>
+    <!-- Header End -->
+    <main>
+        <!-- Hero Area Start-->
+        <div class="slider-area ">
+            <br>
+            <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="/static/assets/img/hero/about.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap text-center">
+                                <h2>Test Company #1</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- job post company Start -->
+        <div class="job-post-company pt-120 pb-120">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <!-- Left Content -->
+                    <div class="col-xl-7 col-lg-8">
+                        <!-- job single -->
+                        <div class="single-job-items mb-50">
+                            <div class="job-items">
+                                <div class="company-img company-img-details">
+                                    <a href="#"><img src="/static/assets/img/icon/job-list1.png" alt=""></a>
+                                </div>
+                                <div class="job-tittle" style="padding-top: 5%;">
+                                    <a href="#">
+                                        <h4>Test Company #1</h4>
+                                    </a>
+                                    <ul>
+                                        <li>Engineering</li>
+                                        <li><i class="fas fa-map-marker-alt"></i>Chennai, TN</li>
+                                        <li>251-1000 people</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- job single End -->
+
+                        <div class="job-post-details">
+                            <div class="post-details1 mb-50">
+                                <!-- Small Section Tittle -->
+                                <div class="small-section-tittle">
+                                    <h4>About</h4>
+                                </div>
+                                <p>Test Company provides open-source code hosting services. Test Company provides code hosting services that allow developers/people to build software for open source and private projects in organizations. It designs and develops
+                                    an online platform to allows users to store and share codes repositories with friends, co-workers, classmates, and complete strangers. Test Company has a strategic partnership with International Business Machines Corporation.
+                                    Chris Wanstrath, PJ Hyett, and Tom Preston-Werner founded it on February 29, 2008, with its headquarters in San Francisco in California.
+                                </p>
+                            </div>
+                            <div class="post-details2  mb-50">
+                                <!-- Small Section Tittle -->
+                                <div class="small-section-tittle">
+                                    <h4>Tech Stack 🛠</h4>
+                                </div>
+                                <div class="tags">
+                                    <span class="tag">SDE</span>
+                                    <span class="tag">Mobile Application</span>
+                                    <span class="tag">Docker</span>
+                                    <span class="tag">Open-Souce Development</span>
+                                </div>
+                            </div>
+                            <div class="post-details2  mb-50">
+                                <!-- Small Section Tittle -->
+                                <div class="small-section-tittle">
+                                    <h4>Culture 🤜🤛</h4>
+                                </div>
+                                <div class="tags">
+                                    <span class="tag">International team</span>
+                                    <span class="tag">Global team</span>
+                                    <span class="tag">Very collaborative</span>
+                                    <span class="tag">Open-source orientation</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Right Content -->
+                    <div class="col-xl-4 col-lg-4">
+                        <div class="post-details3  mb-50">
+                            <!-- Small Section Tittle -->
+                            <div class="small-section-tittle">
+                                <h4>Job Overview</h4>
+                            </div>
+                            <ul>
+                                <li>Location : <span>Chennai, TN</span></li>
+                                <li>Vacancy : <span>02</span></li>
+                                <li>Job nature : <span>Full time</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="post-details3  mb-50">
+                            <div class="small-section-tittle">
+                                <h4>Opportunities</h4>
+                            </div>
+
+                            <button type="button" class="collapsible">Software Developer Intern</button>
+                            <div class="content" style="color: #506172;">
+                                <h4 style="font-size:large;padding-top: 5%;">Description</h4>
+                                <p>Software developers are the creative minds behind software programs, and they have the technical skills to build those programs or to oversee their creation by a team. They create software that enables users to perform
+                                    specific tasks on computer devices.
+                                </p>
+                                <h4 style="font-size:large;padding-top: 5%;">Duties & Responsibilities</h4>
+                                <ul>
+                                    <li>&#8226; Develop and test software to meet consumers' and clients' needs.</li>
+                                    <li>&#8226; Develop upgrades for existing applications.</li>
+                                    <li>&#8226; Monitor quality and performance of applications through testing and maintenance.</li>
+                                    <li>&#8226; Document all work for future reference.</li>
+                                </ul>
+                            </div>
+
+                            <br><br>
+                            <button type="button" class="collapsible">Social Media Marketing Intern</button>
+                            <div class="content" style="color: #506172;">
+                                <h4 style="font-size:large;padding-top: 5%;">Description</h4>
+                                <p>Software developers are the creative minds behind software programs, and they have the technical skills to build those programs or to oversee their creation by a team. They create software that enables users to perform
+                                    specific tasks on computer devices.
+                                </p>
+                                <h4 style="font-size:large;padding-top: 5%;">Duties & Responsibilities</h4>
+                                <ul>
+                                    <li>&#8226; Develop and test software to meet consumers' and clients' needs.</li>
+                                    <li>&#8226; Develop upgrades for existing applications.</li>
+                                    <li>&#8226; Monitor quality and performance of applications through testing and maintenance.</li>
+                                    <li>&#8226; Document all work for future reference.</li>
+                                </ul>
+                            </div>
+
+
+                            <br><br>
+                            <div class="apply-btn2">
+                                <a href="#" class="btn">Get Referral</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- job post company End -->
+
+    </main>
+
+    <!-- JS here -->
+
+    <!-- All JS Custom Plugins Link Here here -->
+    <script src="/static/assets/js/vendor/modernizr-3.5.0.min.js"></script>
+
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="/static/assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/static/assets/js/bootstrap.min.js"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="/static/assets/js/slick.min.js"></script>
+
+    <!-- One Page, Animated-HeadLine -->
+    <script src="/static/assets/js/wow.min.js"></script>
+
+    <!-- Scrollup, nice-select, sticky -->
+    <script src="/static/assets/js/jquery.scrollUp.min.js"></script>
+
+
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="/static/assets/js/plugins.js"></script>
+    <script src="/static/assets/js/main.js"></script>
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>

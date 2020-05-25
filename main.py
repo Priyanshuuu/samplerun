@@ -1,26 +1,19 @@
 """
     @title: MySQL Flask Driver
-    @tag: Python, Flask, Driver, main
+    @tags: Python, Flask, Driver, main
     @author: Krishnakanth Alagiri
     @gh-profile: K-Kraken
+    @gh-repo-url: https://github.com/scholarly-science/COVID-Opportunities/
 """
 
 import time
 from flask import Flask, render_template, redirect, url_for, request,session,make_response,flash
-from werkzeug.utils import secure_filename
 app = Flask(__name__)
 
 
-def genTimeHash(fname):
-     import hashlib
-     hash = hashlib.sha1()
-     tempstr = (str(fname).encode('utf-8')+str(time.time()).encode('utf-8'))
-     hash.update(tempstr)
-     return str(hash.hexdigest()[:10])
-
-
-@app.route('/home', methods=['GET', 'POST'])
-def login():
+# Companies Home Page
+@app.route('/home', methods=['GET'])
+def companies():
      import databaseOps as db
      import random # Only for SQL-Less testing, remove otherwise
      logoname, CompanySize, CompanyNames, Locations, Tags, availableJobs = db.retrieveCompaniesForHome()
@@ -37,7 +30,7 @@ def login():
           CompanySize=CompanySize
      )
 
-
+# Projects Page
 @app.route('/projects')
 def projects():
      import databaseOps as db
@@ -55,12 +48,20 @@ def projects():
           ProjectSize=ProjectSize
      )
 
+# Details Pages; Where companies individual Informations are shows 
+@app.route('/details', methods=['GET'])
+def details():
+     if request.method == 'GET':
+          cid = request.args.get('cid') # Refer PRIMARY KEY (id) for companies and other related tables
+          print(cid)
+     return render_template('details.html')
 
+# Temporary Data Entry Page
 @app.route('/admin')
 def tempadmin():
      return render_template('temp-admin.html')
 
-
+# Validate and pushes information to the db
 @app.route('/adminuploader', methods=['GET', 'POST'])
 def adminupload():
      if request.method == 'POST':
@@ -78,10 +79,6 @@ def adminupload():
           except:
                return 'Entry unsuccessful'
 
-
-
+# Driver Code
 if __name__ == '__main__':
-     import webbrowser
-     #webbrowser.open("http://127.0.0.1:5000/home")
      app.run(host='0.0.0.0', use_reloader=True, debug=True)
-     #app.run(use_reloader=True, debug=True)
