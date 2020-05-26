@@ -35,7 +35,7 @@ def addToCompanies(logoname, CompanyNames, Locations, Tags, availableJobs, Compa
 
 
 def retrieveCompaniesForHome(tags=None):
-  print("tags =",tags)
+  # print("tags =",tags)
   if(tags==None):
     tags=""
   import mysql.connector
@@ -49,7 +49,7 @@ def retrieveCompaniesForHome(tags=None):
   )
   mycursor = mydb.cursor()
   mycursor.execute(
-      "SELECT logoname, CompanyNames, Locations, Tags, availableJobs, CompanySize FROM company where Tags like '%"+tags+"%' or Locations like '%"+tags+"%'order by CompanyNames")
+      "SELECT logoname, CompanyNames, Locations, Tags, availableJobs, CompanySize FROM company where Tags like '%"+tags+"%' or Locations like '%"+tags+"%' order by CompanyNames")
   complist = mycursor.fetchall()
   logoname = []
   CompanySize = []
@@ -85,8 +85,12 @@ def addToProjects(logoname, ProjectNames, Locations, Tags, availableVacancies, P
   mydb.commit()
 
 
-def retrieveProjectsForHome():
+def retrieveProjectsForHome(tags=None):
   import mysql.connector
+  # print("tags =",tags)
+  if(tags == None):
+    tags = ""
+
   host, user, passwd, port = retDBcreds()
   mydb = mysql.connector.connect(
     host=host,
@@ -99,7 +103,7 @@ def retrieveProjectsForHome():
   #TS.run_sql_file('projects.sql', mydb, 'projects')   
 
   mycursor = mydb.cursor()
-  mycursor.execute("SELECT logoname, ProjectNames, Locations, Tags, availableVacancies, ProjectSize FROM projects order by ProjectNames")
+  mycursor.execute("SELECT logoname, ProjectNames, Locations, Tags, availableVacancies, ProjectSize FROM projects  where Tags like '%"+tags+"%' or Locations like '%"+tags+"%' order by ProjectNames")
   projectlist = mycursor.fetchall()
   logoname = []
   ProjectSize = []

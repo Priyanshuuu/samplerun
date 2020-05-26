@@ -43,7 +43,12 @@ def companies():
 @app.route('/projects')
 def projects():
      import databaseOps as db
-     logoname, ProjectSize, ProjectNames, Locations, Tags, availableVacancies = db.retrieveProjectsForHome()
+     tags = None
+     if request.method == 'GET':
+          # Tags optionally retrieved from GET
+          tags = request.args.get('tags')
+
+     logoname, ProjectSize, ProjectNames, Locations, Tags, availableVacancies = db.retrieveProjectsForHome(tags)
      totalSize = len(ProjectNames)
 
      return render_template(
