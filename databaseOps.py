@@ -34,7 +34,10 @@ def addToCompanies(logoname, CompanyNames, Locations, Tags, availableJobs, Compa
   mydb.commit()
 
 
-def retrieveCompaniesForHome():
+def retrieveCompaniesForHome(tags=None):
+  print("tags =",tags)
+  if(tags==None):
+    tags=""
   import mysql.connector
   host, user, passwd, port = retDBcreds()
   mydb = mysql.connector.connect(
@@ -45,7 +48,8 @@ def retrieveCompaniesForHome():
     database="covid"
   )
   mycursor = mydb.cursor()
-  mycursor.execute("SELECT logoname, CompanyNames, Locations, Tags, availableJobs, CompanySize FROM company order by CompanyNames")
+  mycursor.execute(
+      "SELECT logoname, CompanyNames, Locations, Tags, availableJobs, CompanySize FROM company where Tags like '%"+tags+"%' or Locations like '%"+tags+"%'order by CompanyNames")
   complist = mycursor.fetchall()
   logoname = []
   CompanySize = []
@@ -62,7 +66,6 @@ def retrieveCompaniesForHome():
     CompanySize.append(x[5]) # size of a company
   
   return(logoname, CompanySize, CompanyNames, Locations, Tags, availableJobs)
-
 
 
 def addToProjects(logoname, ProjectNames, Locations, Tags, availableVacancies, ProjectSize, details):
@@ -113,7 +116,6 @@ def retrieveProjectsForHome():
     ProjectSize.append(x[5]) # size of a company
   
   return(logoname, ProjectSize, ProjectNames, Locations, Tags, availableVacancies)
-
 
 
 # Driver for Unit Testing 

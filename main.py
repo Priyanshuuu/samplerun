@@ -10,13 +10,22 @@ import time
 from flask import Flask, render_template, redirect, url_for, request,session,make_response,flash
 app = Flask(__name__)
 
+# 404 Page
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('error_pages/404.html'), 404
 
 # Companies Home Page
 @app.route('/home', methods=['GET'])
 def companies():
      import databaseOps as db
      import random # Only for SQL-Less testing, remove otherwise
-     logoname, CompanySize, CompanyNames, Locations, Tags, availableJobs = db.retrieveCompaniesForHome()
+     tags = None
+     if request.method == 'GET':
+          # Tags optionally retrieved from GET
+          tags = request.args.get('tags')
+
+     logoname, CompanySize, CompanyNames, Locations, Tags, availableJobs = db.retrieveCompaniesForHome(tags)
      totalSize = len(CompanyNames)
 
      return render_template(
@@ -81,4 +90,6 @@ def adminupload():
 
 # Driver Code
 if __name__ == '__main__':
+     from os import system
+     system("cls")
      app.run(host='0.0.0.0', use_reloader=True, debug=True)

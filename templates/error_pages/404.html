@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>404 - COVID Opportunities</title>
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap">
+
+
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="static/assets/css/error.css" />
+    <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
+    <!-- Iconsets Start -->
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ url_for('static', filename='./assets/img/icons/apple-icon-57x57.png')}}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ url_for('static', filename='./assets/img/icons/apple-icon-60x60.png')}}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ url_for('static', filename='./assets/img/icons/apple-icon-72x72.png')}}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static', filename='./assets/img/icons/apple-icon-76x76.png')}}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static', filename='./assets/img/icons/apple-icon-114x114.png')}}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ url_for('static', filename='./assets/img/icons/apple-icon-120x120.png')}}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename='./assets/img/icons/apple-icon-144x144.png')}}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename='./assets/img/icons/apple-icon-152x152.png')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='./assets/img/icons/apple-icon-180x180.png')}}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ url_for('static', filename='./assets/img/icons/android-icon-192x192.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='./assets/img/icons/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ url_for('static', filename='./assets/img/icons/favicon-96x96.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='./assets/img/icons/favicon-16x16.png')}}">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <!-- Iconsets Ends-->
+
+    <!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+    <style>
+        .luxbar-brand {
+            font-size: 1em;
+        }
+        
+        .luxbar-navigation {
+            font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", -apple-system, serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Header">
+        <header id="luxbar" class="luxbar-fixed">
+            <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox" />
+            <div class="luxbar-menu luxbar-menu-right luxbar-menu-dark">
+                <ul class="luxbar-navigation">
+                    <li class="luxbar-header">
+                        <a href="#" class="luxbar-brand">COVID Opportunities</a>
+                        <label class="luxbar-hamburger luxbar-hamburger-spin" id="luxbar-hamburger" for="luxbar-checkbox">
+                                    <span></span> </label>
+                    </li>
+                    <li class="luxbar-item"><a href="home">Companies</a></li>
+                    <li class="luxbar-item"><a href="projects">Projects</a></li>
+                    <li class="luxbar-item"><a href="chats">Chats</a></li>
+                    <li class="luxbar-item"><a href="profile">Profile</a></li>
+                    <li class="luxbar-item"><a href="login">Login</a></li>
+                </ul>
+            </div>
+        </header>
+    </div>
+
+    <div id="notfound">
+        <div class="notfound">
+            <div class="notfound-404">
+                <div></div>
+                <h1>404</h1>
+            </div>
+            <h2>Page not found</h2>
+            <p>The page you are looking for might have been removed had its name changed or is temporarily unavailable.</p>
+            <a href="home">home page</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

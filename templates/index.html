@@ -58,6 +58,14 @@
                 display: none;
             }
         }
+        
+        .luxbar-brand {
+            font-size: 1em;
+        }
+        
+        .luxbar-navigation a {
+            border-bottom: none;
+        }
     </style>
 </head>
 
@@ -73,11 +81,11 @@
                             <label class="luxbar-hamburger luxbar-hamburger-spin" id="luxbar-hamburger" for="luxbar-checkbox">
                                 <span></span> </label>
                         </li>
-                        <li class="luxbar-item"><a href="#">Companies</a></li>
-                        <li class="luxbar-item"><a href="{{ url_for('projects') }}">Projects</a></li>
-                        <li class="luxbar-item"><a href="#">Chats</a></li>
-                        <li class="luxbar-item"><a href="#">Profile</a></li>
-                        <li class="luxbar-item"><a href="login.html">Login</a></li>
+                        <li class="luxbar-item"><a href="home">Companies</a></li>
+                        <li class="luxbar-item"><a href="projects">Projects</a></li>
+                        <li class="luxbar-item"><a href="chats">Chats</a></li>
+                        <li class="luxbar-item"><a href="profile">Profile</a></li>
+                        <li class="luxbar-item"><a href="login">Login</a></li>
                     </ul>
                 </div>
             </header>
@@ -107,323 +115,202 @@
                                         class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Chennai, TN, India</span></label>
                             </div>
                             <div class="FilterCategory">
-                                <h5 class="MuiTypography-root FilterCategory-Heading MuiTypography-h5">Scale</h5>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
-                                        class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
-                                        aria-disabled="false"><span class="MuiIconButton-label"></span>
-                                        <span class="MuiTouchRipple-root"></span>
-                                    </span><span
-                                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">1-10
-                                        people</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
-                                        class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
-                                        aria-disabled="false"><span class="MuiIconButton-label"></span>
-                                        <span class="MuiTouchRipple-root"></span>
-                                    </span><span
-                                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">11-50
-                                        people</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
-                                        class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
-                                        aria-disabled="false"><span class="MuiIconButton-label"></span>
-                                        <span class="MuiTouchRipple-root"></span>
-                                    </span><span
-                                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">51-250
-                                        people</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
-                                        class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
-                                        aria-disabled="false"><span class="MuiIconButton-label"></span>
-                                        <span class="MuiTouchRipple-root"></span>
-                                    </span><span
-                                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">251-1000
-                                        people</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
-                                        class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
-                                        aria-disabled="false"><span class="MuiIconButton-label"></span>
-                                        <span class="MuiTouchRipple-root"></span>
-                                    </span><span
-                                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">1000+
-                                        people</span></label>
-                            </div>
-                            <div class="FilterCategory">
                                 <h5 class="MuiTypography-root FilterCategory-Heading MuiTypography-h5">Technology</h5>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
+                                <label onclick="location.href = 'home?tags=AWS';" class="MuiFormControlLabel-root"><span
                                         class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
                                         aria-disabled="false"><span class="MuiIconButton-label"></span>
                                         <span class="MuiTouchRipple-root"></span>
                                     </span><span
                                         class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">AWS</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
+                                <label onclick="location.href = 'home?tags=Python';" class="MuiFormControlLabel-root"><span
                                         class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
                                         aria-disabled="false"><span class="MuiIconButton-label"></span>
                                         <span class="MuiTouchRipple-root"></span>
                                     </span><span
                                         class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Python</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
+                                <label onclick="location.href = 'home?tags=Java';" class="MuiFormControlLabel-root"><span
                                         class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
                                         aria-disabled="false"><span class="MuiIconButton-label"></span>
                                         <span class="MuiTouchRipple-root"></span>
                                     </span><span
                                         class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Java</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
+                                <label onclick="location.href = 'home?tags=JavaScript';" class="MuiFormControlLabel-root"><span
                                         class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
                                         aria-disabled="false"><span class="MuiIconButton-label"></span>
                                         <span class="MuiTouchRipple-root"></span>
                                     </span><span
                                         class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">JavaScript</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
+                                <label onclick="location.href = 'home?tags=Go';" class="MuiFormControlLabel-root"><span
                                         class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
                                         aria-disabled="false"><span class="MuiIconButton-label"></span>
                                         <span class="MuiTouchRipple-root"></span>
                                     </span><span
                                         class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Go</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
+                                <label onclick="location.href = 'home?tags=Docker';" class="MuiFormControlLabel-root"><span
                                         class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
                                         aria-disabled="false"><span class="MuiIconButton-label"></span>
                                         <span class="MuiTouchRipple-root"></span>
                                     </span><span
                                         class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Docker</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
+                                <label onclick="location.href = 'home?tags=Kubernetes';" class="MuiFormControlLabel-root"><span
                                         class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
                                         aria-disabled="false"><span class="MuiIconButton-label"></span>
                                         <span class="MuiTouchRipple-root"></span>
                                     </span><span
                                         class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Kubernetes</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
+                                <label onclick="location.href = 'home?tags=React';" class="MuiFormControlLabel-root"><span
                                         class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
                                         aria-disabled="false"><span class="MuiIconButton-label"></span>
                                         <span class="MuiTouchRipple-root"></span>
                                     </span><span
                                         class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">React</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
+                                <label onclick="location.href = 'home?tags=Ruby';" class="MuiFormControlLabel-root"><span
                                         class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
                                         aria-disabled="false"><span class="MuiIconButton-label"></span>
                                         <span class="MuiTouchRipple-root"></span>
                                     </span><span
                                         class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Ruby</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
+                                <label onclick="location.href = 'home?tags=C';" class="MuiFormControlLabel-root"><span
                                         class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
                                         aria-disabled="false"><span class="MuiIconButton-label"></span>
                                         <span class="MuiTouchRipple-root"></span>
                                     </span><span
                                         class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">C</span></label>
-                                <button class="MuiButtonBase-root MuiButton-root MuiButton-text MoreButton" tabindex="0" type="button"><span class="MuiButton-label">more ▾</span><span
+                                <button class="MuiButtonBase-root MuiButton-root button-text MoreButton" tabindex="0" type="button"><span class="MuiButton-label">more ▾</span><span
                                         class="MuiTouchRipple-root"></span></button>
                             </div>
                             <div class="FilterCategory">
                                 <h5 class="MuiTypography-root FilterCategory-Heading MuiTypography-h5">Team Culture</h5>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
+                                <label onclick="location.href = 'home?tags=collaborative';" class="MuiFormControlLabel-root"><span
                                         class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
                                         aria-disabled="false"><span class="MuiIconButton-label"></span>
                                         <span class="MuiTouchRipple-root"></span>
                                     </span><span
                                         class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Very
                                         collaborative</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
+                                <label onclick="location.href = 'home?tags=Flat hierarchy';" class="MuiFormControlLabel-root"><span
                                         class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
                                         aria-disabled="false"><span class="MuiIconButton-label"></span>
                                         <span class="MuiTouchRipple-root"></span>
                                     </span><span
                                         class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Flat
                                         hierarchy</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
+                                <label onclick="location.href = 'home?tags=Clear individual goals';" class="MuiFormControlLabel-root"><span
                                         class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
                                         aria-disabled="false"><span class="MuiIconButton-label"></span>
                                         <span class="MuiTouchRipple-root"></span>
                                     </span><span
-                                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Clear
-                                        individual
-                                        goals</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
+                                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Clear individual goals</span></label>
+                                <label onclick="location.href = 'home?tags=Open-source';" class="MuiFormControlLabel-root"><span
                                         class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
                                         aria-disabled="false"><span class="MuiIconButton-label"></span>
                                         <span class="MuiTouchRipple-root"></span>
                                     </span><span
-                                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Open-source
-                                        orientation</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
+                                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Open-source orientation</span></label>
+                                <label onclick="location.href = 'home?tags=International team';" class="MuiFormControlLabel-root"><span
                                         class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
                                         aria-disabled="false"><span class="MuiIconButton-label"></span>
                                         <span class="MuiTouchRipple-root"></span>
                                     </span><span
-                                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">International
-                                        team</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
+                                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">International team</span></label>
+                                <label onclick="location.href = 'home?tags=Global team';" class="MuiFormControlLabel-root"><span
                                         class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
                                         aria-disabled="false"><span class="MuiIconButton-label"></span>
                                         <span class="MuiTouchRipple-root"></span>
                                     </span><span
-                                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Global
-                                        team</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
+                                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Global team</span></label>
+                                <label onclick="location.href = 'home?tags=Industry';" class="MuiFormControlLabel-root"><span
                                         class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
                                         aria-disabled="false"><span class="MuiIconButton-label"></span>
                                         <span class="MuiTouchRipple-root"></span>
                             </div>
                             <div class="FilterCategory">
                                 <h5 class="MuiTypography-root FilterCategory-Heading MuiTypography-h5">Industry</h5>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
+                                <label onclick="location.href = 'home?tags=Software';" class="MuiFormControlLabel-root"><span
                                         class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
                                         aria-disabled="false"><span class="MuiIconButton-label"></span>
                                         <span class="MuiTouchRipple-root"></span>
                                     </span><span
                                         class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Software</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
+                                <label onclick="location.href = 'home?tags=Enterprise Software';" class="MuiFormControlLabel-root"><span
                                         class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
                                         aria-disabled="false"><span class="MuiIconButton-label"></span>
                                         <span class="MuiTouchRipple-root"></span>
                                     </span><span
-                                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Enterprise
-                                        Software</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
+                                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Enterprise Software</span></label>
+                                <label onclick="location.href = 'home?tags=Internet';" class="MuiFormControlLabel-root"><span
                                         class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
                                         aria-disabled="false"><span class="MuiIconButton-label"></span>
                                         <span class="MuiTouchRipple-root"></span>
                                     </span><span
                                         class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Internet</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
+                                <label onclick="location.href = 'home?tags=Information Technology';" class="MuiFormControlLabel-root"><span
                                         class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
                                         aria-disabled="false"><span class="MuiIconButton-label"></span>
                                         <span class="MuiTouchRipple-root"></span>
                                     </span><span
-                                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Information
-                                        Technology</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
+                                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Information Technology</span></label>
+                                <label onclick="location.href = 'home?tags=Analytics';" class="MuiFormControlLabel-root"><span
                                         class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
                                         aria-disabled="false"><span class="MuiIconButton-label"></span>
                                         <span class="MuiTouchRipple-root"></span>
                                     </span><span
                                         class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Analytics</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
+                                <label onclick="location.href = 'home?tags=Health Care';" class="MuiFormControlLabel-root"><span
                                         class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
                                         aria-disabled="false"><span class="MuiIconButton-label"></span>
                                         <span class="MuiTouchRipple-root"></span>
                                     </span><span
-                                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Health
-                                        Care</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
+                                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Health Care</span></label>
+                                <label onclick="location.href = 'home?tags=SaaS';" class="MuiFormControlLabel-root"><span
                                         class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
                                         aria-disabled="false"><span class="MuiIconButton-label"></span>
                                         <span class="MuiTouchRipple-root"></span>
                                     </span><span
                                         class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">SaaS</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
+                                <label onclick="location.href = 'home?tags=Apps';" class="MuiFormControlLabel-root"><span
                                         class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
                                         aria-disabled="false"><span class="MuiIconButton-label"></span>
                                         <span class="MuiTouchRipple-root"></span>
                                     </span><span
                                         class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Apps</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
+                                <label onclick="location.href = 'home?tags=Mobile';" class="MuiFormControlLabel-root"><span
                                         class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
                                         aria-disabled="false"><span class="MuiIconButton-label"></span>
                                         <span class="MuiTouchRipple-root"></span>
                                     </span><span
                                         class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Mobile</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
+                                <label onclick="location.href = 'home?tags=Big Data';" class="MuiFormControlLabel-root"><span
                                         class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
                                         aria-disabled="false"><span class="MuiIconButton-label"></span>
                                         <span class="MuiTouchRipple-root"></span>
                                     </span><span
-                                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Big
-                                        Data</span></label>
+                                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Big Data</span></label>
                                 <button class="MuiButtonBase-root MuiButton-root MuiButton-text MoreButton" tabindex="0" type="button"><span class="MuiButton-label">more ▾</span><span
                                         class="MuiTouchRipple-root"></span></button>
-                            </div>
-                            <div class="FilterCategory">
-                                <h5 class="MuiTypography-root FilterCategory-Heading MuiTypography-h5">Perks</h5>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
-                                        class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
-                                        aria-disabled="false"><span class="MuiIconButton-label"></span>
-                                        <span class="MuiTouchRipple-root"></span>
-                                    </span><span
-                                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">WFH-friendly</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
-                                        class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
-                                        aria-disabled="false"><span class="MuiIconButton-label"></span>
-                                        <span class="MuiTouchRipple-root"></span>
-                                    </span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
-                                        class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
-                                        aria-disabled="false"><span class="MuiIconButton-label"></span>
-                                        <span class="MuiTouchRipple-root"></span>
-                                    </span><span
-                                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Flexible
-                                        working
-                                        hours</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
-                                        class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
-                                        aria-disabled="false"><span class="MuiIconButton-label"></span>
-                                        <span class="MuiTouchRipple-root"></span>
-                                    </span><span
-                                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Technical
-                                        support</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
-                                        class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
-                                        aria-disabled="false"><span class="MuiIconButton-label"></span>
-                                        <span class="MuiTouchRipple-root"></span>
-                                    </span><span
-                                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1">Catered
-                                        meals</span></label>
-                                <label onclick="location.href = 'home?tags=something';" class="MuiFormControlLabel-root"><span
-                                        class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox MuiIconButton-colorSecondary"
-                                        aria-disabled="false"><span class="MuiIconButton-label"></span>
-                                        <span class="MuiTouchRipple-root"></span>
-                                    </span>
-                            </div>
-                            <div class="FilterCategory">
-                                <h5 class="MuiTypography-root FilterCategory-Heading MuiTypography-h5">Coming Soon</h5>
-                                <label class="MuiFormControlLabel-root Mui-disabled"><span
-                                        class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox jss412 Mui-disabled MuiIconButton-colorSecondary Mui-disabled Mui-disabled"
-                                        tabindex="-1" aria-disabled="true"><span class="MuiIconButton-label"><input
-                                                class="jss413" disabled="" type="checkbox" data-indeterminate="false"
-                                                value="25"></span></span>
-                                    <span
-                                        class="MuiTypography-root MuiFormControlLabel-label Mui-disabled MuiTypography-body1">Friends
-                                        with co-workers</span>
-                                </label>
-                                <label class="MuiFormControlLabel-root Mui-disabled"><span
-                                        class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox jss412 Mui-disabled MuiIconButton-colorSecondary Mui-disabled Mui-disabled"
-                                        tabindex="-1" aria-disabled="true"><span class="MuiIconButton-label"><input
-                                                class="jss413" disabled="" type="checkbox" data-indeterminate="false"
-                                                value="24"></span></span>
-                                    <span
-                                        class="MuiTypography-root MuiFormControlLabel-label Mui-disabled MuiTypography-body1">Frequent
-                                        feedback</span>
-                                </label>
-                                <label class="MuiFormControlLabel-root Mui-disabled"><span
-                                        class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox jss412 Mui-disabled MuiIconButton-colorSecondary Mui-disabled Mui-disabled"
-                                        tabindex="-1" aria-disabled="true"><span class="MuiIconButton-label"><input
-                                                class="jss413" disabled="" type="checkbox" data-indeterminate="false"
-                                                value="22"></span></span>
-                                    <span
-                                        class="MuiTypography-root MuiFormControlLabel-label Mui-disabled MuiTypography-body1">Few
-                                        processes</span>
-                                </label>
-                                <label class="MuiFormControlLabel-root Mui-disabled"><span
-                                        class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox jss412 Mui-disabled MuiIconButton-colorSecondary Mui-disabled Mui-disabled"
-                                        tabindex="-1" aria-disabled="true"><span class="MuiIconButton-label"><input
-                                                class="jss413" disabled="" type="checkbox" data-indeterminate="false"
-                                                value="28"></span></span>
-                                    <span
-                                        class="MuiTypography-root MuiFormControlLabel-label Mui-disabled MuiTypography-body1">Sponsors
-                                        new visas</span>
-                                </label>
-                                <label class="MuiFormControlLabel-root Mui-disabled"><span
-                                        class="MuiButtonBase-root MuiIconButton-root jss410 MuiCheckbox-root MuiCheckbox-colorSecondary FilterCheckbox jss412 Mui-disabled MuiIconButton-colorSecondary Mui-disabled Mui-disabled"
-                                        tabindex="-1" aria-disabled="true"><span class="MuiIconButton-label"><input
-                                                class="jss413" disabled="" type="checkbox" data-indeterminate="false"
-                                                value="1058"></span></span>
-                                    <span
-                                        class="MuiTypography-root MuiFormControlLabel-label Mui-disabled MuiTypography-body1">Flat
-                                        hierarchy</span>
-                                </label>
                             </div>
                         </div>
                     </aside>
                     <div class="Content">
+                        {% if len==0 %}
+                        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-lg-12">
+                            <div class="MuiPaper-root MuiCard-root B2Bform MuiPaper-elevation1 MuiPaper-rounded">
+                                <div class="MuiGrid-root Padding MuiGrid-container MuiGrid-align-items-xs-flex-start MuiGrid-justify-xs-center">
+                                    <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-lg-9">
+                                        <p class="MuiTypography-root PaddingBottom MuiTypography-body2">We didn't find any roles matching any preferences now. Try resetting your preferences or get back later :)
+                                        </p>
+                                        <a class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary MuiButton-outlinedSizeLarge MuiButton-sizeLarge" tabindex="0" role="button" aria-disabled="false" href="/home"><span
+                                                class="MuiButton-label">Reset Your Preferences</span><span
+                                                class="MuiTouchRipple-root"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% else %}
                         <div class="MuiGrid-root Companies MarginBottom MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-space-around">
                             {%for i in range(0, len)%}
                             <!-- Card Start -->
-                            <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-6" onclick="location.href = 'details?cid=1';">
+                            <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-6" onclick="location.href = 'details?pid=1';">
                                 <div class="CompanyCard">
                                     <div class="MuiPaper-root MuiCard-root TheCard MuiPaper-elevation1 MuiPaper-rounded">
                                         <div class="MuiCardContent-root CardContents">
@@ -436,10 +323,9 @@
                                                     <div class="MuiGrid-root MuiGrid-item">
                                                         <p class="MuiTypography-root CardTitle MuiTypography-body1 MuiTypography-gutterBottom">
                                                             {{CompanyNames[i]}} </p>
-                                                        <p class="MuiTypography-root CardText MuiTypography-body1">
-                                                            {{Locations[i]}}</p>
-                                                        <p class="MuiTypography-root CardText MuiTypography-body1">
-                                                            {{CompanySize[i]}} people</p>
+                                                        <p class="MuiTypography-root CardText MuiTypography-body1">{{Locations[i]}}</p>
+                                                        <p class="MuiTypography-root CardText MuiTypography-body1">{{CompanySize[i]}} people
+                                                        </p>
                                                         <p class="MuiTypography-root CardText MuiTypography-body1">
                                                             <b>{{availableJobs[i]}} engineering jobs</b></p>
                                                     </div>
@@ -448,8 +334,7 @@
                                                     <!-- Single Tag Start -->
                                                     {%for singleTag in Tags[i]%}
                                                     <div class="MuiGrid-root Tag MuiGrid-item">
-                                                        <p class="MuiTypography-root TagText MuiTypography-body1">
-                                                            {{singleTag}}</p>
+                                                        <p class="MuiTypography-root TagText MuiTypography-body1">{{singleTag}}</p>
                                                     </div>
                                                     {%endfor%}
                                                     <!-- Single Tag End -->
@@ -464,8 +349,9 @@
                         </div>
                         <div class="Content-Footer">
                             <div class="MuiPaper-root MuiButtonBase-root MuiButton-root MuiButton-text ShowMoreButton MuiPaper-elevation1 MuiPaper-rounded" tabindex="0" role="button" aria-disabled="false"><span class="MuiButton-label">Show More
-                                    Companies</span><span class="MuiTouchRipple-root"></span></div>
+                                    Projects</span><span class="MuiTouchRipple-root"></span></div>
                         </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
