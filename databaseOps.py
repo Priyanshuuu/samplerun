@@ -112,7 +112,7 @@ def retrieveProjectsForHome(tags=None):
   Tags = []
   availableVacancies = []
   for x in projectlist:
-    logoname.append('uploads/logos/'+x[0])  # logoname with extn (1.gif etc)
+    logoname.append(x[0])  # logoname with extn (1.gif etc)
     ProjectNames.append(x[1]) # company name
     Locations.append(x[2]) # location of company
     Tags.append(x[3].split(",")) # tags associated
