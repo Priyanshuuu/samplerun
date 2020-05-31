@@ -49,7 +49,7 @@ def retrieveCompaniesForHome(tags=None):
   )
   mycursor = mydb.cursor()
   mycursor.execute(
-      "SELECT logoname, CompanyNames, Locations, Tags, availableJobs, CompanySize FROM company where Tags like '%"+tags+"%' or Locations like '%"+tags+"%' order by CompanyNames")
+      "SELECT logoname, CompanyNames, Locations, Tags, availableJobs, CompanySize, id FROM company where Tags like '%"+tags+"%' or Locations like '%"+tags+"%' order by CompanyNames")
   complist = mycursor.fetchall()
   logoname = []
   CompanySize = []
@@ -57,6 +57,7 @@ def retrieveCompaniesForHome(tags=None):
   Locations = []
   Tags = []
   availableJobs = []
+  cid = []
   for x in complist:
     logoname.append(x[0])  # logoname with extn (1.gif etc)
     CompanyNames.append(x[1]) # company name
@@ -64,8 +65,9 @@ def retrieveCompaniesForHome(tags=None):
     Tags.append(x[3].split(",")) # tags associated
     availableJobs.append(x[4]) # available number of jobs
     CompanySize.append(x[5]) # size of a company
+    cid.append(x[6]) # Primary key of the company
   
-  return(logoname, CompanySize, CompanyNames, Locations, Tags, availableJobs)
+  return(logoname, CompanySize, CompanyNames, Locations, Tags, availableJobs, cid)
 
 
 def addToProjects(logoname, ProjectNames, Locations, Tags, availableVacancies, ProjectSize, details):
@@ -100,7 +102,7 @@ def retrieveProjectsForHome(tags=None):
     database="covid"
   )
   # For performing test with random database sample, comment this during production.
-  #TS.run_sql_file('projects.sql', mydb, 'projects')   
+  #TS.run_sql_file('company.sql', mydb, 'projects')   
 
   mycursor = mydb.cursor()
   mycursor.execute("SELECT logoname, ProjectNames, Locations, Tags, availableVacancies, ProjectSize FROM projects  where Tags like '%"+tags+"%' or Locations like '%"+tags+"%' order by ProjectNames")
@@ -122,9 +124,72 @@ def retrieveProjectsForHome(tags=None):
   return(logoname, ProjectSize, ProjectNames, Locations, Tags, availableVacancies)
 
 
+#For Companies information and Job opportunities.
+
+def addTo_OP(id, logoname, job_type, techstack, culture, D_R, description, company_type):
+  import mysql.connector
+  mydb = mysql.connector.connect(
+      host="127.0.0.1",
+      user="root",
+      passwd="",
+      port='3306',
+      database="covid"
+  )
+
+  mycursor = mydb.cursor()
+  sql = "INSERT INTO opportunities (id, logoname, job_type, techstack, culture, D_R, description, company_type) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+  val = (int(id), logoname, job_type, techstack, culture, D_R, description, company_type)
+  mycursor.execute(sql, val)
+  mydb.commit()
+
+
+def retrieveOpportunitiesForHome(cid):
+  import mysql.connector
+
+  host, user, passwd, port = retDBcreds()
+  mydb = mysql.connector.connect(
+    host=host,
+    user=user,
+    passwd=passwd,
+    port=port,
+    database="covid"
+  )
+
+  mycursor = mydb.cursor() 
+  fetch = "SELECT company.Locations, company.CompanySize, company.details, company.logoname, job_type, techstack, culture, D_R, description, company_type, company.CompanyNames  FROM opportunities,company where opportunities.id ='" + str(cid)+ "' AND company.id ='" + str(cid)+ "'"
+  mycursor.execute(fetch)
+  Opportunities = mycursor.fetchall()
+  Locations = []
+  CompanySize = []
+  Details = []
+  logoname = []
+  Job_Type = []
+  TechStack = []
+  Culture = []
+  D_R = []
+  Description = []
+  Company_Type = []
+  company_name = []
+
+  for x in Opportunities:
+    Locations.append(x[0])
+    CompanySize.append(x[1])
+    Details.append(x[2])
+    logoname.append(x[3])
+    Job_Type.append(x[4])
+    TechStack.append(x[5])
+    Culture.append(x[6])
+    D_R.append(x[7])
+    Description.append(x[8])
+    Company_Type.append(x[9])
+    company_name.append(x[10])
+
+  return(Locations, CompanySize, Details, logoname, Job_Type, TechStack, Culture, D_R, Description, Company_Type, company_name)
+
+
 # Driver for Unit Testing 
 if __name__ == '__main__':
   # logoname, CompanySize, CompanyNames, Locations, Tags, availableJobs = retrieveCompaniesForHome()
   # print("\n", logoname, "\n", CompanySize, "\n", CompanyNames, "\n", Locations, "\n", Tags, "\n", availableJobs)
-  addToCompanies("4.gif", "Adobe", "Chennai, TN", "Open-source orientation,Very collaborative,Internet Software,AWS,Chef,Kubernetes",2, 5000, "Hello")
-  
+  # addToCompanies("4.gif", "Adobe", "Chennai, TN", "Open-source orientation,Very collaborative,Internet Software,AWS,Chef,Kubernetes",2, 5000, "Hello")
+  pass

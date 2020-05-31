@@ -196,7 +196,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap text-center">
-                                <h2>Test Company #1</h2>
+                                <h2>{{ Company_Name }}</h2>
                             </div>
                         </div>
                     </div>
@@ -213,16 +213,16 @@
                         <div class="single-job-items mb-50">
                             <div class="job-items">
                                 <div class="company-img company-img-details">
-                                    <a href="#"><img src="/static/assets/img/icon/job-list1.png" alt=""></a>
+                                    <a href="#"><img src="/static/uploads/logos/{{ logoname }}" alt=""></a>
                                 </div>
                                 <div class="job-tittle" style="padding-top: 5%;">
                                     <a href="#">
-                                        <h4>Test Company #1</h4>
+                                        <h4>{{ Company_Name }}</h4>
                                     </a>
                                     <ul>
-                                        <li>Engineering</li>
-                                        <li><i class="fas fa-map-marker-alt"></i>Chennai, TN</li>
-                                        <li>251-1000 people</li>
+                                        <li>{{ Company_Type }}</li>
+                                        <li><i class="fas fa-map-marker-alt"></i>{{ Locations }}</li>
+                                        <li>{{ CompanySize }} People</li>
                                     </ul>
                                 </div>
                             </div>
@@ -235,9 +235,7 @@
                                 <div class="small-section-tittle">
                                     <h4>About</h4>
                                 </div>
-                                <p>Test Company provides open-source code hosting services. Test Company provides code hosting services that allow developers/people to build software for open source and private projects in organizations. It designs and develops
-                                    an online platform to allows users to store and share codes repositories with friends, co-workers, classmates, and complete strangers. Test Company has a strategic partnership with International Business Machines Corporation.
-                                    Chris Wanstrath, PJ Hyett, and Tom Preston-Werner founded it on February 29, 2008, with its headquarters in San Francisco in California.
+                                <p>{{ Details }}
                                 </p>
                             </div>
                             <div class="post-details2  mb-50">
@@ -246,10 +244,9 @@
                                     <h4>Tech Stack 🛠</h4>
                                 </div>
                                 <div class="tags">
-                                    <span class="tag">SDE</span>
-                                    <span class="tag">Mobile Application</span>
-                                    <span class="tag">Docker</span>
-                                    <span class="tag">Open-Souce Development</span>
+                                    {%for i in range(0, lenT_S)%}
+                                    <span class="tag">{{TechStack[i]}}</span>
+                                    {%endfor%}
                                 </div>
                             </div>
                             <div class="post-details2  mb-50">
@@ -258,10 +255,9 @@
                                     <h4>Culture 🤜🤛</h4>
                                 </div>
                                 <div class="tags">
-                                    <span class="tag">International team</span>
-                                    <span class="tag">Global team</span>
-                                    <span class="tag">Very collaborative</span>
-                                    <span class="tag">Open-source orientation</span>
+                                    {%for i in range(0, lenCul)%}
+                                    <span class="tag">{{Culture[i]}}</span>
+                                    {%endfor%}
                                 </div>
                             </div>
                         </div>
@@ -274,39 +270,23 @@
                                 <h4>Opportunities</h4>
                             </div>
 
-                            <button type="button" class="collapsible">Software Developer Intern</button>
+                            {%for i in range(0, len_JT)%}
+
+                            <button type="button" class="collapsible">{{ Job_Type[i] }}</button>
                             <div class="content" style="color: #506172;">
                                 <h4 style="font-size:large;padding-top: 5%;">Description</h4>
-                                <p>Software developers are the creative minds behind software programs, and they have the technical skills to build those programs or to oversee their creation by a team. They create software that enables users to perform
-                                    specific tasks on computer devices.
+                                <p>{{ Description }}
                                 </p>
                                 <h4 style="font-size:large;padding-top: 5%;">Duties & Responsibilities</h4>
                                 <ul>
-                                    <li>&#8226; Develop and test software to meet consumers' and clients' needs.</li>
-                                    <li>&#8226; Develop upgrades for existing applications.</li>
-                                    <li>&#8226; Monitor quality and performance of applications through testing and maintenance.</li>
-                                    <li>&#8226; Document all work for future reference.</li>
+                                    {%for j in range(0, len_DR)%}
+                                    <li>&#8226;{{ D_R[j] }}</li>
+                                    {%endfor%}
                                 </ul>
                             </div>
 
                             <br><br>
-                            <button type="button" class="collapsible">Social Media Marketing Intern</button>
-                            <div class="content" style="color: #506172;">
-                                <h4 style="font-size:large;padding-top: 5%;">Description</h4>
-                                <p>Software developers are the creative minds behind software programs, and they have the technical skills to build those programs or to oversee their creation by a team. They create software that enables users to perform
-                                    specific tasks on computer devices.
-                                </p>
-                                <h4 style="font-size:large;padding-top: 5%;">Duties & Responsibilities</h4>
-                                <ul>
-                                    <li>&#8226; Develop and test software to meet consumers' and clients' needs.</li>
-                                    <li>&#8226; Develop upgrades for existing applications.</li>
-                                    <li>&#8226; Monitor quality and performance of applications through testing and maintenance.</li>
-                                    <li>&#8226; Document all work for future reference.</li>
-                                </ul>
-                            </div>
-
-
-                            <br><br>
+                            {%endfor%}
                             <div class="apply-btn2">
                                 <a href="#" class="btn">Get Referral</a>
                             </div>

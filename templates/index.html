@@ -310,14 +310,14 @@
                         <div class="MuiGrid-root Companies MarginBottom MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-justify-xs-space-around">
                             {%for i in range(0, len)%}
                             <!-- Card Start -->
-                            <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-6" onclick="location.href = 'details?pid=1';">
+                            <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-6" onclick="location.href = '{{ url_for( 'details' , cid=CompanyId[i] ) }}';">       
                                 <div class="CompanyCard">
                                     <div class="MuiPaper-root MuiCard-root TheCard MuiPaper-elevation1 MuiPaper-rounded">
                                         <div class="MuiCardContent-root CardContents">
                                             <div class="MainBlock">
                                                 <div class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 MuiGrid-align-items-xs-flex-start">
                                                     <div class="MuiGrid-root MuiGrid-item">
-                                                        <div class="CompanyInfo-Image" style="background-image: url({{logoname[i]}});">
+                                                        <div class="CompanyInfo-Image" style="background-image: url(/static/uploads/logos/{{logoname[i]}});">
                                                         </div>
                                                     </div>
                                                     <div class="MuiGrid-root MuiGrid-item">

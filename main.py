@@ -25,7 +25,7 @@ def companies():
           # Tags optionally retrieved from GET
           tags = request.args.get('tags')
 
-     logoname, CompanySize, CompanyNames, Locations, Tags, availableJobs = db.retrieveCompaniesForHome(tags)
+     logoname, CompanySize, CompanyNames, Locations, Tags, availableJobs, cid = db.retrieveCompaniesForHome(tags)
      totalSize = len(CompanyNames)
 
      return render_template(
@@ -36,7 +36,8 @@ def companies():
           Locations=Locations, 
           Tags=Tags, 
           availableJobs=availableJobs,
-          CompanySize=CompanySize
+          CompanySize=CompanySize,
+          CompanyId=cid
      )
 
 # Projects Page
@@ -63,12 +64,32 @@ def projects():
      )
 
 # Details Pages; Where companies individual Informations are shows 
-@app.route('/details', methods=['GET'])
+@app.route('/details', methods=["GET", "POST"])
 def details():
+     import databaseOps as db # details?cid=2
      if request.method == 'GET':
-          cid = request.args.get('cid') # Refer PRIMARY KEY (id) for companies and other related tables
-          print(cid)
-     return render_template('details.html')
+          cid = request.args.get('cid') # Refer PRIMARY KEY (id) for companies and other related table.
+     Locations, CompanySize, Details, logoname, Job_Type, TechStack, Culture, D_R, Description , Company_Type, Company_Name = db.retrieveOpportunitiesForHome(cid)
+     T_S = list(TechStack[0].split(','))
+     D_R = list(map(str.strip, D_R[0].split('. ')))
+     Culture = list(map(str.strip, Culture[0].split(',')))
+     return render_template('details.html',
+          Company_Type=Company_Type[0],
+          Locations=Locations[0],
+          CompanySize=CompanySize[0],
+          Company_Name=Company_Name[0],
+          lenT_S=len(T_S),
+          TechStack=T_S,
+          lenCul=len(Culture),
+          Culture=Culture,
+          Description=Description[0],
+          len_DR=len(D_R),
+          D_R=D_R,
+          Job_Type=Job_Type,
+          len_JT=len(Job_Type),
+          logoname=logoname[0],
+          Details=Details[0]
+          )
 
 # Temporary Data Entry Page
 @app.route('/admin')
@@ -96,5 +117,9 @@ def adminupload():
 # Driver Code
 if __name__ == '__main__':
      from os import system
-     system("cls")
-     app.run(host='0.0.0.0', use_reloader=True, debug=True)
+     # system("cls")
+     # app.run(host='0.0.0.0', use_reloader=True, debug=True)
+     import webbrowser
+     webbrowser.open("http://127.0.0.1:5000/")
+     app.run(use_reloader=True, debug=True)
+
