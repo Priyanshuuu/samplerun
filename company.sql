@@ -10,13 +10,13 @@
 
 CREATE TABLE IF NOT EXISTS company (
    id int(255) NOT NULL AUTO_INCREMENT,
-   logoname varchar(255) NOT NULL,
+   logoname varchar(1000) NOT NULL,
    CompanyNames varchar(255) NOT NULL,
    Locations varchar(255) NOT NULL,
-   Tags varchar(255) NOT NULL,
+   Tags varchar(3000) NOT NULL,
    availableJobs int(255) NOT NULL,
    CompanySize int(255) NOT NULL,
-   details varchar(255) NULL,
+   details varchar(3000) NULL,
   PRIMARY KEY (id)
 );
 
@@ -26,31 +26,32 @@ CREATE TABLE IF NOT EXISTS company (
 
 CREATE TABLE IF NOT EXISTS projects (
   id int(255) NOT NULL AUTO_INCREMENT,
-  logoname varchar(255) NOT NULL,
+  logoname varchar(1000) NOT NULL,
   ProjectNames varchar(255) NOT NULL,
   Locations varchar(255) NOT NULL,
-  Tags varchar(255) NOT NULL,
+  Tags varchar(1000) NOT NULL,
   availableVacancies int(255) NOT NULL,
   ProjectSize int(255) NOT NULL,
-  details varchar(255) NULL,
+  details varchar(3000) NULL,
   PRIMARY KEY (id)
 );
 
 
 
 --
--- Table structure for table 'opportunities' where D_R= Duties & Responsibilities.
+-- Table structure for table 'opportunities' 
+-- where D_R = "Duties & Responsibilities".
 --
 
 CREATE TABLE IF NOT EXISTS opportunities (
   op_id int(255) NOT NULL AUTO_INCREMENT,
   id int(255) NOT NULL REFERENCES company(id),
-  logoname varchar(255) NOT NULL,
+  logoname varchar(1000) NOT NULL,
   job_type varchar(255) NOT NULL,
   techstack varchar(255) NOT NULL,
   culture varchar(255) NOT NULL,
   D_R varchar(255) NOT NULL,
-  description varchar(255) NULL,
+  description varchar(3000) NULL,
   company_type varchar(255) NULL,
   PRIMARY KEY (op_id)
 );
