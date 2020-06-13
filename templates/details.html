@@ -160,6 +160,54 @@
         .luxbar-navigation {
             font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", -apple-system, serif;
         }
+       
+       /* Modal CSS */
+       .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            
+        background-color: #fefefe;
+        margin-top: 10em;
+        margin-left:32em;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 30%;
+        height: 30%;
+        justify-content: center;
+        
+
+        }
+
+        /* The Close Button */
+        .close {
+            
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+
+        }
+
+        .close:hover,
+        .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+        }
+
     </style>
 
 </head>
@@ -183,14 +231,19 @@
                         <li class="luxbar-item"><a href="profile">Profile</a></li>
                         <li class="luxbar-item"><a href="login">Login</a></li>
                 </div>
+
+
+        
             </header>
         </div>
     </header>
     <!-- Header End -->
+    
     <main>
         <!-- Hero Area Start-->
         <div class="slider-area ">
             <br>
+            
             <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="/static/assets/img/hero/about.jpg">
                 <div class="container">
                     <div class="row">
@@ -201,8 +254,11 @@
                         </div>
                     </div>
                 </div>
+                
+                </div>
             </div>
         </div>
+        
         <!-- job post company Start -->
         <div class="job-post-company pt-120 pb-120">
             <div class="container">
@@ -288,16 +344,36 @@
                             <br><br>
                             {%endfor%}
                             <div class="apply-btn2">
-                                <a href="#" class="btn">Get Referral</a>
+                                <a href="#" class="btn " id="myBtn" >Get Referral</a>
+                                <!-- The Modal -->
+                                <div id="myModal" class="modal">
+
+                                    <!-- Modal content -->
+                                    <div class="modal-content rounded-0">
+                                    <span class="close">&times;</span>
+                                    <p>Enter your token</p>
+                                    <form action="{{ url_for('handle_token') }}" method="post">
+                                        Token: <input type="text" name="projectFilePath">
+                                        <button class="apply-btn2" style="height: 2.2em;">Send</button>
+                                    </form>
+                                    </div>
+                                
+                                </div>
+                                
                             </div>
+
                         </div>
                     </div>
 
                 </div>
             </div>
+            
         </div>
         <!-- job post company End -->
 
+
+        
+        
     </main>
 
     <!-- JS here -->
@@ -338,6 +414,35 @@
             });
         }
     </script>
+
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
+    
 
 </body>
 
