@@ -122,8 +122,9 @@ def adminupload():
 # Handle referal token
 @app.route('/handle_token)', methods=['POST'])
 def handle_token():
-    ...
-    return (request.form['projectFilePath'])
+    import databaseOps as db
+    token = request.form['projectFilePath']
+    return db.verifyToken(token)
 
 
 # Driver Code

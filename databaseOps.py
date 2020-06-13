@@ -103,7 +103,7 @@ def retrieveProjectsForHome(tags=None):
         database="covid"
     )
     # For performing test with random database sample, comment this during production.
-    #TS.run_sql_file('company.sql', mydb, 'projects')
+    # TS.run_sql_file('company.sql', mydb, 'projects')
 
     mycursor = mydb.cursor()
     mycursor.execute("SELECT logoname, ProjectNames, Locations, Tags, availableVacancies, ProjectSize FROM projects  where Tags like '%" +
@@ -189,6 +189,26 @@ def retrieveOpportunitiesForHome(cid):
         company_name.append(x[10])
 
     return(Locations, CompanySize, Details, logoname, Job_Type, TechStack, Culture, D_R, Description, Company_Type, company_name)
+
+
+def verifyToken(tok):
+    import mysql.connector
+    host, user, passwd, port = retDBcreds()
+    mydb = mysql.connector.connect(
+        host=host,
+        user=user,
+        passwd=passwd,
+        port=port,
+        database="covid")
+
+    mycursor = mydb.cursor()
+    mycursor.execute("SELECT * FROM token ")
+    fetch = mycursor.fetchall()
+    for i, j in fetch:
+        if j == tok:
+            return "Token Valid"
+
+    return "TOken Invalid"
 
 
 # Driver for Unit Testing
