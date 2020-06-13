@@ -57,6 +57,12 @@ CREATE TABLE IF NOT EXISTS opportunities (
 );
 
 ALTER TABLE opportunities ADD CONSTRAINT cid FOREIGN KEY(id) REFERENCES company(id) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
+
+
+CREATE TABLE IF NOT EXISTS token (
+  id int(255) NOT NULL,
+  token varchar(1000) NOT NULL,
+  PRIMARY KEY (id)
+);
 
 
