@@ -99,6 +99,7 @@ def details():
 @app.route('/admin')
 def tempadmin():
     return render_template('temp-admin.html')
+    
 
 # Validate and pushes information to the db
 @app.route('/adminuploader', methods=['GET', 'POST'])
@@ -115,6 +116,19 @@ def adminupload():
         try:
             db.addToCompanies(logoname, CompanyName, Location,
                               Tags, availableJobs, CompanySize, details)
+            return 'Entry successful'
+        except:
+            return 'Entry unsuccessful'
+
+# Validate and pushes information to the db
+@app.route('/tokenuploader', methods=['GET', 'POST'])
+def tokenupload():
+    if request.method == 'POST':
+        import databaseOps as db
+        id = request.form['Id']
+        token = request.form['Token']
+        try:
+            db.addToToken(id,token)
             return 'Entry successful'
         except:
             return 'Entry unsuccessful'
