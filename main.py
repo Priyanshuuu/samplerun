@@ -200,7 +200,7 @@ def handle_token():
 if __name__ == '__main__':
     from os import system
     system("clear")
-    app.run(host='192.168.43.178', use_reloader=True, debug=True)
+    app.run(host='127.0.0.1', use_reloader=True, debug=True)
 #      import webbrowser
 #      webbrowser.open("http://127.0.0.1:5000/")
 #      app.run(use_reloader=True, debug=True)
