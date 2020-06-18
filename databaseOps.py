@@ -34,6 +34,24 @@ def addToCompanies(logoname, CompanyNames, Locations, Tags, availableJobs, Compa
     mydb.commit()
 
 
+def addProjects(logoname, ProjectName, Location,
+                Tags, availableVacancies, ProjectSize, details):
+    import mysql.connector
+    mydb = mysql.connector.connect(
+        host="127.0.0.1",
+        user="root",
+        passwd="",
+        port='3306',
+        database="covid"
+    )
+    mycursor = mydb.cursor()
+    sql = "INSERT INTO projects (logoname, ProjectNames, Locations, Tags, availableVacancies, ProjectSize, details) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+    val = (logoname, ProjectName, Location,
+           Tags, int(availableVacancies), int(ProjectSize), details)
+    mycursor.execute(sql, val)
+    mydb.commit()
+
+
 def retrieveCompaniesForHome(tags=None):
     # print("tags =",tags)
     if(tags == None):
