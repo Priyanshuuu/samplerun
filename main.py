@@ -132,6 +132,46 @@ def adminupload():
             return 'Entry unsuccessful'
 
 # Validate and pushes information to the db
+# Validate and pushes information to the db
+
+
+@app.route('/projectuploader', methods=['GET', 'POST'])
+def projectupload():
+    if request.method == 'POST':
+        import databaseOps as db
+        logoname = request.form['logoname']
+        ProjectName = request.form['ProjectName']
+        Location = request.form['Location']
+        Tags = request.form['Tags']
+        availableVacancies = request.form['availableVacancies']
+        ProjectSize = request.form['ProjectSize']
+        details = request.form['details']
+        try:
+            db.addProjects(logoname, ProjectName, Location,
+                           Tags, availableVacancies, ProjectSize, details)
+            return 'Entry successful'
+        except:
+            return 'Entry unsuccessful'
+
+
+@app.route('/oppuploader', methods=['GET', 'POST'])
+def opupload():
+    if request.method == 'POST':
+        import databaseOps as db
+        id = request.form['CompanyId']
+        logoname = request.form['logoname']
+        job_type = request.form['JobType']
+        techstack = request.form['TechStack']
+        culture = request.form['culture']
+        D_R = request.form['D_R']
+        description = request.form['description']
+        company_type = request.form['Type']
+        try:
+            db.addTo_OP(id, logoname, job_type, techstack,
+                        culture, D_R, description, company_type)
+            return 'Entry successful'
+        except:
+            return 'Entry unsuccessful'
 
 
 @app.route('/tokenuploader', methods=['GET', 'POST'])
@@ -160,7 +200,7 @@ def handle_token():
 if __name__ == '__main__':
     from os import system
     system("clear")
-    app.run(host='127.0.0.1', use_reloader=True, debug=True)
+    app.run(host='192.168.43.178', use_reloader=True, debug=True)
 #      import webbrowser
 #      webbrowser.open("http://127.0.0.1:5000/")
 #      app.run(use_reloader=True, debug=True)

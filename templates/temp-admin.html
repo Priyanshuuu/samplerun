@@ -244,20 +244,124 @@
           placeholder="Enter Logo URL"
           required
         />
-        <br />
-        <br /><br />
-        <br />
+
         <legend><span class="number">3</span> About the Company</legend>
         <textarea name="details" placeholder="About the Company"></textarea>
         <br />
         <input type="submit" value="Add Company" />
       </form>
     </div>
+
+    <!-- Project Entry -->
+    <br />
+    <div class="form-style-5">
+      <form
+        method="POST"
+        action="projectuploader"
+        enctype="multipart/form-data"
+      >
+        <br />
+        <legend><span class="number">4</span> Project Details</legend>
+        <input
+          type="text"
+          name="ProjectName"
+          placeholder="Project Name *"
+          required
+        />
+        <input
+          type="text"
+          name="Location"
+          placeholder="Company Location *"
+          required
+        />
+        <input
+          type="text"
+          name="ProjectSize"
+          placeholder="Project Size *"
+          required
+        />
+        <input
+          type="text"
+          name="availableVacancies"
+          placeholder="Number of available Vacancies*"
+          required
+        />
+        <input
+          type="text"
+          name="Tags"
+          placeholder="Project Tags (Seperate multiple tags with comma ',' ) *"
+          required
+        />
+        <br />
+        <legend>
+          <span class="number">5</span> Enter Logo URL (*.jpg, *.png, *.gif)
+        </legend>
+        <input
+          type="text"
+          name="logoname"
+          placeholder="Enter Logo URL"
+          required
+        />
+        <legend><span class="number">6</span> About the Project</legend>
+        <textarea name="details" placeholder="About the Project"></textarea>
+        <br />
+        <input type="submit" value="Add Company" />
+      </form>
+    </div>
+    <br />
+
+    <!-- Opportunities -->
+    <br />
+    <div class="form-style-5">
+      <form method="POST" action="oppuploader" enctype="multipart/form-data">
+        <br />
+        <legend><span class="number">7</span> Opportunities</legend>
+        <input
+          type="text"
+          name="CompanyId"
+          placeholder="Company Id *"
+          required
+        />
+        <input type="text" name="JobType" placeholder="Job Type*" required />
+        <input
+          type="text"
+          name="TechStack"
+          placeholder="Tech Stack *"
+          required
+        />
+        <input type="text" name="culture" placeholder="Culture *" required />
+        <input type="text" name="D_R" placeholder="D_R *" required />
+        <input
+          type="text"
+          name="description"
+          placeholder="Description *"
+          required
+        />
+        <br />
+        <legend>
+          <span class="number">8</span> Enter Logo URL (*.jpg, *.png, *.gif)
+        </legend>
+        <input
+          type="text"
+          name="logoname"
+          placeholder="Enter Logo URL"
+          required
+        />
+        <br />
+
+        <legend><span class="number">9</span> Company Type</legend>
+        <textarea name="Type" placeholder="type of Company"></textarea>
+        <br />
+        <input type="submit" value="Add Opportunity" />
+      </form>
+    </div>
+    <br />
+
     <!-- Token Entry -->
     <div class="form-style-5">
       <form method="POST" action="tokenuploader" enctype="multipart/form-data">
         <br />
-        <legend><span class="number">4</span> Token Entry</legend>
+        <legend><span class="number">10</span> Token Entry</legend>
         <input type="text" name="Id" placeholder="Id *" required />
         <input type="text" name="Token" placeholder="Token *" required />
 
