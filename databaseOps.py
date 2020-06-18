@@ -210,7 +210,8 @@ def verifyToken(tok):
 
     return "TOken Invalid"
 
-def addToToken(id,token):
+
+def addToToken(id, token):
     import mysql.connector
     mydb = mysql.connector.connect(
         host="127.0.0.1",
@@ -221,9 +222,9 @@ def addToToken(id,token):
     )
     mycursor = mydb.cursor()
     sql = "INSERT INTO token (id,token) VALUES (%s, %s)"
-    val = (int(id),token)
+    val = (int(id), token)
     mycursor.execute(sql, val)
-    mydb.commit()    
+    mydb.commit()
 
 
 # Driver for Unit Testing

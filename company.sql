@@ -65,4 +65,3 @@ CREATE TABLE IF NOT EXISTS token (
   PRIMARY KEY (id)
 );
 
-
