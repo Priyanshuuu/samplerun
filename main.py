@@ -11,11 +11,15 @@ from flask import Flask, render_template, redirect, url_for, request, session, m
 app = Flask(__name__)
 
 # 404 Page
+
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('error_pages/404.html'), 404
 
 # Companies Home Page
+
+
 @app.route('/home', methods=['GET'])
 def companies():
     import databaseOps as db
@@ -42,6 +46,8 @@ def companies():
     )
 
 # Projects Page
+
+
 @app.route('/projects')
 def projects():
     import databaseOps as db
@@ -66,6 +72,8 @@ def projects():
     )
 
 # Details Pages; Where companies individual Informations are shows
+
+
 @app.route('/details', methods=["GET", "POST"])
 def details():
     import databaseOps as db  # details?cid=2
@@ -96,11 +104,15 @@ def details():
                            )
 
 # Temporary Data Entry Page
+
+
 @app.route('/admin')
 def tempadmin():
     return render_template('temp-admin.html')
 
 # Validate and pushes information to the db
+
+
 @app.route('/adminuploader', methods=['GET', 'POST'])
 def adminupload():
     if request.method == 'POST':
@@ -119,7 +131,24 @@ def adminupload():
         except:
             return 'Entry unsuccessful'
 
+# Validate and pushes information to the db
+
+
+@app.route('/tokenuploader', methods=['GET', 'POST'])
+def tokenupload():
+    if request.method == 'POST':
+        import databaseOps as db
+        id = request.form['Id']
+        token = request.form['Token']
+        try:
+            db.addToToken(id, token)
+            return 'Entry successful'
+        except:
+            return 'Entry unsuccessful'
+
 # Handle referal token
+
+
 @app.route('/handle_token)', methods=['POST'])
 def handle_token():
     import databaseOps as db
@@ -131,7 +160,7 @@ def handle_token():
 if __name__ == '__main__':
     from os import system
     system("clear")
-    app.run(host='0.0.0.0', use_reloader=True, debug=True)
+    app.run(host='127.0.0.1', use_reloader=True, debug=True)
 #      import webbrowser
 #      webbrowser.open("http://127.0.0.1:5000/")
 #      app.run(use_reloader=True, debug=True)
