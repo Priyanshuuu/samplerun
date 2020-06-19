@@ -227,6 +227,7 @@ def loginDataPostTesting(email,password):
 # Registration
 @app.route('/register', methods=['GET','POST'])
 def register():
+    import databaseOps as db
     if request.method=="POST":
         firstName = request.form['first_name']
         lastName = request.form['last_name']
