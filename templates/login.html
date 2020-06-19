@@ -31,12 +31,91 @@
     <link rel="icon" type="image/png" sizes="96x96" href="./assets/img/icons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/icons/favicon-16x16.png">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+
     <!-- Iconsets Ends-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="minimum-scale=1,initial-scale=1,width=device-width,shrink-to-fit=no">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/mui.css') }}">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
+    <!-- Iconsets Start -->
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ url_for('static', filename='./assets/img/icons/apple-icon-57x57.png')}}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ url_for('static', filename='./assets/img/icons/apple-icon-60x60.png')}}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ url_for('static', filename='./assets/img/icons/apple-icon-72x72.png')}}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ url_for('static', filename='./assets/img/icons/apple-icon-76x76.png')}}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static', filename='./assets/img/icons/apple-icon-114x114.png')}}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ url_for('static', filename='./assets/img/icons/apple-icon-120x120.png')}}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ url_for('static', filename='./assets/img/icons/apple-icon-144x144.png')}}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename='./assets/img/icons/apple-icon-152x152.png')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='./assets/img/icons/apple-icon-180x180.png')}}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ url_for('static', filename='./assets/img/icons/android-icon-192x192.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='./assets/img/icons/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ url_for('static', filename='./assets/img/icons/favicon-96x96.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='./assets/img/icons/favicon-16x16.png')}}">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <!-- Iconsets Ends-->
+
+    <style>
+         ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+         ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+        
+         ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        
+        @media only screen and (max-device-width: 480px) {
+            .Filters {
+                display: none;
+            }
+        }
+        
+        .luxbar-brand {
+            font-size: 1em;
+        }
+        
+        .luxbar-navigation a {
+            border-bottom: none;
+        }
+    </style>
 
 </head>
 
 <body class="bg-gradient-primary">
-    <div class="container">
+    <div id="root">
+        <div class="Header">
+            <header id="luxbar" class="luxbar-fixed">
+                <input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox" />
+                <div class="luxbar-menu luxbar-menu-right luxbar-menu-dark">
+                    <ul class="luxbar-navigation">
+                        <li class="luxbar-header">
+                            <a href="home" class="luxbar-brand">COVID Opportunities</a>
+                            <label class="luxbar-hamburger luxbar-hamburger-spin" id="luxbar-hamburger" for="luxbar-checkbox">
+                                <span></span> </label>
+                        </li>
+                        <li class="luxbar-item"><a href="home">Companies</a></li>
+                        <li class="luxbar-item"><a href="projects">Projects</a></li>
+                        <li class="luxbar-item"><a href="chats">Chats</a></li>
+                        <li class="luxbar-item"><a href="profile">Profile</a></li>
+                        <li class="luxbar-item"><a href="login">Login</a></li>
+                    </ul>
+                </div>
+            </header>
+        </div>
+    <div class="container" style="padding-top: 4em;">
         <div class="row justify-content-center">
             <div class="col-md-9 col-lg-12 col-xl-10">
                 <div class="card shadow-lg o-hidden border-0 my-5">
@@ -50,7 +129,7 @@
                                     <div class="text-center">
                                         <h4 class="text-dark mb-4">Welcome Back!</h4>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" method="post">
                                         <div class="form-group"><input class="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." name="email"></div>
                                         <div class="form-group"><input class="form-control form-control-user" type="password" id="exampleInputPassword" placeholder="Password" name="password"></div>
                                         <div class="form-group">
@@ -62,8 +141,8 @@
                                             style="background-color: #0077b4;"><i class="fab fa-linkedin-in"></i>&nbsp; Login with LinkedIn</a>
                                         <hr>
                                     </form>
-                                    <div class="text-center"><a class="small" href="forgot-password.html">Forgot Password?</a></div>
-                                    <div class="text-center"><a class="small" href="register.html">Create an Account!</a></div>
+                                    <div class="text-center"><a class="small" href="forgot-password">Forgot Password?</a></div>
+                                    <div class="text-center"><a class="small" href="register">Create an Account!</a></div>
                                 </div>
                             </div>
                         </div>

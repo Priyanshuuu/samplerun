@@ -8,7 +8,9 @@
 
 import time
 from flask import Flask, render_template, redirect, url_for, request, session, make_response, flash
+
 app = Flask(__name__)
+
 
 # 404 Page
 
@@ -16,6 +18,7 @@ app = Flask(__name__)
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('error_pages/404.html'), 404
+
 
 # Companies Home Page
 
@@ -45,6 +48,7 @@ def companies():
         CompanyId=cid
     )
 
+
 # Projects Page
 
 
@@ -70,6 +74,7 @@ def projects():
         availableVacancies=availableVacancies,
         ProjectSize=ProjectSize
     )
+
 
 # Details Pages; Where companies individual Informations are shows
 
@@ -103,12 +108,14 @@ def details():
                            Details=Details[0]
                            )
 
+
 # Temporary Data Entry Page
 
 
 @app.route('/admin')
 def tempadmin():
     return render_template('temp-admin.html')
+
 
 # Validate and pushes information to the db
 
@@ -130,6 +137,7 @@ def adminupload():
             return 'Entry successful'
         except:
             return 'Entry unsuccessful'
+
 
 # Validate and pushes information to the db
 # Validate and pushes information to the db
@@ -186,6 +194,7 @@ def tokenupload():
         except:
             return 'Entry unsuccessful'
 
+
 # Handle referal token
 
 
@@ -195,10 +204,60 @@ def handle_token():
     token = request.form['projectFilePath']
     return db.verifyToken(token)
 
+# Login page
+@app.route('/login', methods=['GET','POST'])
+def login():
+    import databaseOps as db
+    if request.method=='POST':
+        email = request.form['email']
+        password = request.form['password']
+        # return render_template('dataPosted.html')
+        return redirect(url_for("loginDataPostTesting",email=email,password=password))
+    else:
+        return render_template('login.html')
+
+
+# Login Testing
+@app.route('/<email>/<password>')
+def loginDataPostTesting(email,password):
+    return f" Login Details </br> Email: {email} </br> Password: {password}"
+    # Should check with database here
+
+
+# Registration
+@app.route('/register', methods=['GET','POST'])
+def register():
+    if request.method=="POST":
+        firstName = request.form['first_name']
+        lastName = request.form['last_name']
+        email = request.form['email']
+        password = request.form['password']
+        passwordRepeat = request.form['password_repeat']
+        if(password==passwordRepeat):
+            return redirect(url_for("registerDataPostTesting",firstName = firstName,lastName = lastName, email = email,password = password))
+        else:
+            return f"Passwords doesn't match!"
+    else:
+        return render_template('register.html')
+
+
+# Registration Testing
+@app.route('/<firstName>/<lastName>/<email>/<password>')
+def registerDataPostTesting(firstName,lastName,email,password):
+    return f" Registration Details </br> First Name: {firstName} </br> Last Name: {lastName} </br> Email: {email} </br> Password: {password}"
+    # Should add to database here
+
+
+# Forgot Password
+@app.route('/forgot-password',methods=['GET'])
+def forgot_password():
+    return render_template('forgot-password.html')
+
 
 # Driver Code
 if __name__ == '__main__':
     from os import system
+
     system("clear")
     app.run(host='127.0.0.1', use_reloader=True, debug=True)
 #      import webbrowser
