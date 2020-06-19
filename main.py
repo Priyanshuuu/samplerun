@@ -204,53 +204,50 @@ def handle_token():
     token = request.form['projectFilePath']
     return db.verifyToken(token)
 
+
 # Login page
-@app.route('/login', methods=['GET','POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     import databaseOps as db
-    if request.method=='POST':
+    if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
-        # return render_template('dataPosted.html')
-        return redirect(url_for("loginDataPostTesting",email=email,password=password))
+        if (email != "") and (password != ""):
+            flag = db.checkRequest(email, password)
+            if flag:
+                return render_template("outputScreen.html", message="Login Successful!")
+            else:
+                return render_template("outputScreen.html", message="Cannot Login!")
+        else:
+            return render_template("outputScreen.html", message="Missing Attributes!")
     else:
         return render_template('login.html')
 
 
-# Login Testing
-@app.route('/<email>/<password>')
-def loginDataPostTesting(email,password):
-    return f" Login Details </br> Email: {email} </br> Password: {password}"
-    # Should check with database here
-
-
 # Registration
-@app.route('/register', methods=['GET','POST'])
+@app.route('/register', methods=['GET', 'POST'])
 def register():
     import databaseOps as db
-    if request.method=="POST":
+    if request.method == "POST":
         firstName = request.form['first_name']
         lastName = request.form['last_name']
         email = request.form['email']
         password = request.form['password']
         passwordRepeat = request.form['password_repeat']
-        if(password==passwordRepeat):
-            return redirect(url_for("registerDataPostTesting",firstName = firstName,lastName = lastName, email = email,password = password))
+        if (password == passwordRepeat):
+            if ((firstName != "") and (lastName != "") and (email != "") and (password != "")):
+                db.addUserToDatabase(firstName, lastName, email, password);
+                return render_template('outputScreen.html', message="Successfully Registered!")
+            else:
+                return render_template("outputScreen.html", message="Missing Attributes!")
         else:
-            return f"Passwords doesn't match!"
+            return render_template("outputScreen.html", message="Passwords doesn't match!")
     else:
         return render_template('register.html')
 
 
-# Registration Testing
-@app.route('/<firstName>/<lastName>/<email>/<password>')
-def registerDataPostTesting(firstName,lastName,email,password):
-    return f" Registration Details </br> First Name: {firstName} </br> Last Name: {lastName} </br> Email: {email} </br> Password: {password}"
-    # Should add to database here
-
-
 # Forgot Password
-@app.route('/forgot-password',methods=['GET'])
+@app.route('/forgot-password', methods=['GET'])
 def forgot_password():
     return render_template('forgot-password.html')
 

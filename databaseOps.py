@@ -5,7 +5,6 @@
     @gh-profile: navins7
 """
 
-
 import test as TS
 
 
@@ -14,7 +13,7 @@ def retDBcreds():
     user = "root"
     passwd = ""
     port = '3306'
-    return([host, user, passwd, port])
+    return ([host, user, passwd, port])
 
 
 def addToCompanies(logoname, CompanyNames, Locations, Tags, availableJobs, CompanySize, details):
@@ -54,7 +53,7 @@ def addProjects(logoname, ProjectName, Location,
 
 def retrieveCompaniesForHome(tags=None):
     # print("tags =",tags)
-    if(tags == None):
+    if (tags == None):
         tags = ""
     import mysql.connector
     host, user, passwd, port = retDBcreds()
@@ -67,7 +66,7 @@ def retrieveCompaniesForHome(tags=None):
     )
     mycursor = mydb.cursor()
     mycursor.execute(
-        "SELECT logoname, CompanyNames, Locations, Tags, availableJobs, CompanySize, id FROM company where Tags like '%"+tags+"%' or Locations like '%"+tags+"%' order by CompanyNames")
+        "SELECT logoname, CompanyNames, Locations, Tags, availableJobs, CompanySize, id FROM company where Tags like '%" + tags + "%' or Locations like '%" + tags + "%' order by CompanyNames")
     complist = mycursor.fetchall()
     logoname = []
     CompanySize = []
@@ -85,7 +84,7 @@ def retrieveCompaniesForHome(tags=None):
         CompanySize.append(x[5])  # size of a company
         cid.append(x[6])  # Primary key of the company
 
-    return(logoname, CompanySize, CompanyNames, Locations, Tags, availableJobs, cid)
+    return (logoname, CompanySize, CompanyNames, Locations, Tags, availableJobs, cid)
 
 
 def addToProjects(logoname, ProjectNames, Locations, Tags, availableVacancies, ProjectSize, details):
@@ -109,7 +108,7 @@ def addToProjects(logoname, ProjectNames, Locations, Tags, availableVacancies, P
 def retrieveProjectsForHome(tags=None):
     import mysql.connector
     # print("tags =",tags)
-    if(tags == None):
+    if (tags == None):
         tags = ""
 
     host, user, passwd, port = retDBcreds()
@@ -124,8 +123,9 @@ def retrieveProjectsForHome(tags=None):
     # TS.run_sql_file('company.sql', mydb, 'projects')
 
     mycursor = mydb.cursor()
-    mycursor.execute("SELECT logoname, ProjectNames, Locations, Tags, availableVacancies, ProjectSize FROM projects  where Tags like '%" +
-                     tags+"%' or Locations like '%"+tags+"%' order by ProjectNames")
+    mycursor.execute(
+        "SELECT logoname, ProjectNames, Locations, Tags, availableVacancies, ProjectSize FROM projects  where Tags like '%" +
+        tags + "%' or Locations like '%" + tags + "%' order by ProjectNames")
     projectlist = mycursor.fetchall()
     logoname = []
     ProjectSize = []
@@ -141,7 +141,7 @@ def retrieveProjectsForHome(tags=None):
         availableVacancies.append(x[4])  # available number of jobs
         ProjectSize.append(x[5])  # size of a company
 
-    return(logoname, ProjectSize, ProjectNames, Locations, Tags, availableVacancies)
+    return (logoname, ProjectSize, ProjectNames, Locations, Tags, availableVacancies)
 
 
 # For Companies information and Job opportunities.
@@ -178,7 +178,7 @@ def retrieveOpportunitiesForHome(cid):
 
     mycursor = mydb.cursor()
     fetch = "SELECT company.Locations, company.CompanySize, company.details, company.logoname, job_type, techstack, culture, D_R, description, company_type, company.CompanyNames  FROM opportunities,company where opportunities.id ='" + \
-        str(cid) + "' AND company.id ='" + str(cid) + "'"
+            str(cid) + "' AND company.id ='" + str(cid) + "'"
     mycursor.execute(fetch)
     Opportunities = mycursor.fetchall()
     Locations = []
@@ -206,7 +206,8 @@ def retrieveOpportunitiesForHome(cid):
         Company_Type.append(x[9])
         company_name.append(x[10])
 
-    return(Locations, CompanySize, Details, logoname, Job_Type, TechStack, Culture, D_R, Description, Company_Type, company_name)
+    return (Locations, CompanySize, Details, logoname, Job_Type, TechStack, Culture, D_R, Description, Company_Type,
+            company_name)
 
 
 def verifyToken(tok):
@@ -241,6 +242,43 @@ def addToToken(id, token):
     mycursor = mydb.cursor()
     sql = "INSERT INTO token (id,token) VALUES (%s, %s)"
     val = (int(id), token)
+    mycursor.execute(sql, val)
+    mydb.commit()
+
+
+def checkRequest(email, password):
+    import mysql.connector
+    mydb = mysql.connector.connect(
+        host="127.0.0.1",
+        user="root",
+        passwd="",
+        port='3306',
+        database="covid"
+    )
+    mycursor = mydb.cursor()
+    sql = "SELECT COUNT(*) FROM users WHERE email = %s and pwd = %s"
+    val = (email, password)
+    mycursor.execute(sql, val)
+    (number_of_rows_affected, ) = mycursor.fetchone()
+    mydb.commit()
+    if(number_of_rows_affected!=0):
+        return True
+    else:
+        return False
+
+
+def addUserToDatabase(firstName, lastName, email, password):
+    import mysql.connector
+    mydb = mysql.connector.connect(
+        host="127.0.0.1",
+        user="root",
+        passwd="",
+        port='3306',
+        database="covid"
+    )
+    mycursor = mydb.cursor()
+    sql = "INSERT INTO users (first_name, last_name, email, pwd) VALUES (%s, %s, %s, %s)"
+    val = (firstName, lastName, email, password)
     mycursor.execute(sql, val)
     mydb.commit()
 
