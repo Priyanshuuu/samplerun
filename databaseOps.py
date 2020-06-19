@@ -12,7 +12,7 @@ import test as TS
 def retDBcreds():
     host = "127.0.0.1"
     user = "root"
-    passwd = "Sai@vizag52"
+    passwd = ""
     port = '3306'
     return([host, user, passwd, port])
 

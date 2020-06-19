@@ -18,7 +18,7 @@ def run_sql_file(filename, connection, type):
     mydb = mysql.connector.connect(
       host="localhost",
       user="root",
-      passwd="Sai@vizag52",
+      passwd="",
       database="covid"
     )
     file = open(filename, 'r')
