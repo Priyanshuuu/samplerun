@@ -235,9 +235,12 @@ def register():
         password = request.form['password']
         passwordRepeat = request.form['password_repeat']
         if (password == passwordRepeat):
-            if ((firstName != "") and (lastName != "") and (email != "") and (password != "")):
-                db.addUserToDatabase(firstName, lastName, email, password);
-                return render_template('outputScreen.html', message="Successfully Registered!")
+            if (firstName != "") and (lastName != "") and (email != "") and (password != ""):
+                flag = db.addUserToDatabase(firstName, lastName, email, password);
+                if flag:
+                    return render_template('outputScreen.html', message="Successfully Registered!")
+                else:
+                    return render_template('outputScreen.html', message="User already exists!")
             else:
                 return render_template("outputScreen.html", message="Missing Attributes!")
         else:

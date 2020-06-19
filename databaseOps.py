@@ -251,7 +251,7 @@ def checkRequest(email, password):
     mydb = mysql.connector.connect(
         host="127.0.0.1",
         user="root",
-        passwd="",
+        passwd="Sai@vizag52",
         port='3306',
         database="covid"
     )
@@ -259,9 +259,9 @@ def checkRequest(email, password):
     sql = "SELECT COUNT(*) FROM users WHERE email = %s and pwd = %s"
     val = (email, password)
     mycursor.execute(sql, val)
-    (number_of_rows_affected, ) = mycursor.fetchone()
+    (number_of_rows_affected,) = mycursor.fetchone()
     mydb.commit()
-    if(number_of_rows_affected!=0):
+    if number_of_rows_affected != 0:
         return True
     else:
         return False
@@ -272,15 +272,20 @@ def addUserToDatabase(firstName, lastName, email, password):
     mydb = mysql.connector.connect(
         host="127.0.0.1",
         user="root",
-        passwd="",
+        passwd="Sai@vizag52",
         port='3306',
         database="covid"
     )
     mycursor = mydb.cursor()
     sql = "INSERT INTO users (first_name, last_name, email, pwd) VALUES (%s, %s, %s, %s)"
     val = (firstName, lastName, email, password)
-    mycursor.execute(sql, val)
-    mydb.commit()
+    try:
+        mycursor.execute(sql, val)
+        (number_of_rows_affected,) = mycursor.fetchone()
+        mydb.commit()
+        return True
+    except:
+        return False
 
 
 # Driver for Unit Testing
