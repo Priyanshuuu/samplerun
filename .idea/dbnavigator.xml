@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DataExportManager">
@@ -26,7 +26,6 @@
     <loaded-nodes>
       <connection connection-id="124a36b9-852b-40f4-867c-a91a9849f5eb">
         <schema name="covid" object-types="table" />
-        <schema name="mysql" object-types="table" />
       </connection>
     </loaded-nodes>
   </component>

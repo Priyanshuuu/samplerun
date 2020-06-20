@@ -66,8 +66,8 @@ CREATE TABLE IF NOT EXISTS token (
 );
 
 CREATE TABLE IF NOT EXISTS users (
-    first_name varchar(1000) NOT NULL,
-    last_name varchar(1000) NOT NULL,
+    fullname varchar(1000) NOT NULL,
+    phone varchar(12) NOT NULL,
     email varchar(100) NOT NULL,
     pwd varchar(1000) NOT NULL,
     PRIMARY KEY (email)

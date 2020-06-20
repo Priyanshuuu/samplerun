@@ -251,7 +251,7 @@ def checkRequest(email, password):
     mydb = mysql.connector.connect(
         host="127.0.0.1",
         user="root",
-        passwd="Sai@vizag52",
+        passwd="",
         port='3306',
         database="covid"
     )
@@ -267,21 +267,20 @@ def checkRequest(email, password):
         return False
 
 
-def addUserToDatabase(firstName, lastName, email, password):
+def addUserToDatabase(fullname, phone, email, password):
     import mysql.connector
     mydb = mysql.connector.connect(
         host="127.0.0.1",
         user="root",
-        passwd="Sai@vizag52",
+        passwd="",
         port='3306',
         database="covid"
     )
     mycursor = mydb.cursor()
-    sql = "INSERT INTO users (first_name, last_name, email, pwd) VALUES (%s, %s, %s, %s)"
-    val = (firstName, lastName, email, password)
+    sql = "INSERT INTO users (fullname, phone, email, pwd) VALUES (%s, %s, %s, %s)"
+    val = (fullname, phone, email, password)
     try:
         mycursor.execute(sql, val)
-        (number_of_rows_affected,) = mycursor.fetchone()
         mydb.commit()
         return True
     except:

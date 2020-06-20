@@ -20,6 +20,62 @@ def page_not_found(e):
     return render_template('error_pages/404.html'), 404
 
 
+# Index Page
+
+
+@app.route('/', methods=['GET', 'POST'])
+def home():
+    import databaseOps as db
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        if (email != "") and (password != ""):
+            flag = db.checkRequest(email, password)
+            if flag:
+                return redirect(url_for("companies"))
+            else:
+                return render_template("login.html", errorMessage="Credentials doesn't match!")
+        else:
+            return render_template("login.html", errorMessage="Fill all the attributes!")
+    else:
+        return render_template('login.html')
+
+
+# Index Page
+
+
+@app.route('/index', methods=['GET'])
+def index():
+    return redirect(url_for('home'))
+
+
+# Signup Page
+
+
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    import databaseOps as db
+    if request.method == "POST":
+        fullName = request.form['fullname']
+        email = request.form['email']
+        phone = request.form['phone']
+        password = request.form['password']
+        if (fullName != "") and (phone != "") and (email != "") and (password != ""):
+            try:
+                checkbox = request.form.getlist('agreementCheck')[0]
+                flag = db.addUserToDatabase(fullName, phone, email, password);
+                if flag:
+                    return render_template('signup.html', messagePositive="Successfully Registered!")
+                else:
+                    return render_template('signup.html', messageNegative="User already exists! Check your email!")
+            except:
+                return render_template("signup.html", messageNegative="Ensure agreements are accepted!")
+        else:
+            return render_template("signup.html", messageNegative="Check missing attributes!")
+    else:
+        return render_template('signup.html')
+
+
 # Companies Home Page
 
 
@@ -208,20 +264,7 @@ def handle_token():
 # Login page
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    import databaseOps as db
-    if request.method == 'POST':
-        email = request.form['email']
-        password = request.form['password']
-        if (email != "") and (password != ""):
-            flag = db.checkRequest(email, password)
-            if flag:
-                return render_template("outputScreen.html", message="Login Successful!")
-            else:
-                return render_template("outputScreen.html", message="Cannot Login!")
-        else:
-            return render_template("outputScreen.html", message="Missing Attributes!")
-    else:
-        return render_template('login.html')
+    return redirect(url_for('home'))
 
 
 # Registration
