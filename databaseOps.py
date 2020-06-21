@@ -11,7 +11,7 @@ import test as TS
 def retDBcreds():
     host = "127.0.0.1"
     user = "root"
-    passwd = ""
+    passwd = "Priyanshu25@"
     port = '3306'
     return ([host, user, passwd, port])
 
@@ -21,7 +21,7 @@ def addToCompanies(logoname, CompanyNames, Locations, Tags, availableJobs, Compa
     mydb = mysql.connector.connect(
         host="127.0.0.1",
         user="root",
-        passwd="",
+        passwd="Priyanshu25@",
         port='3306',
         database="covid"
     )
@@ -39,7 +39,7 @@ def addProjects(logoname, ProjectName, Location,
     mydb = mysql.connector.connect(
         host="127.0.0.1",
         user="root",
-        passwd="",
+        passwd="Priyanshu25@",
         port='3306',
         database="covid"
     )
@@ -92,7 +92,7 @@ def addToProjects(logoname, ProjectNames, Locations, Tags, availableVacancies, P
     mydb = mysql.connector.connect(
         host="127.0.0.1",
         user="root",
-        passwd="",
+        passwd="Priyanshu25@",
         port='3306',
         database="covid"
     )
@@ -151,7 +151,7 @@ def addTo_OP(id, logoname, job_type, techstack, culture, D_R, description, compa
     mydb = mysql.connector.connect(
         host="127.0.0.1",
         user="root",
-        passwd="",
+        passwd="Priyanshu25@",
         port='3306',
         database="covid"
     )
@@ -235,7 +235,7 @@ def addToToken(id, token):
     mydb = mysql.connector.connect(
         host="127.0.0.1",
         user="root",
-        passwd="",
+        passwd="Priyanshu25@",
         port='3306',
         database="covid"
     )
@@ -251,7 +251,7 @@ def checkRequest(email, password):
     mydb = mysql.connector.connect(
         host="127.0.0.1",
         user="root",
-        passwd="",
+        passwd="Priyanshu25@",
         port='3306',
         database="covid"
     )
@@ -272,7 +272,7 @@ def addUserToDatabase(fullname, phone, email, password):
     mydb = mysql.connector.connect(
         host="127.0.0.1",
         user="root",
-        passwd="",
+        passwd="Priyanshu25@",
         port='3306',
         database="covid"
     )

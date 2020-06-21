@@ -8,12 +8,35 @@
 
 import time
 from flask import Flask, render_template, redirect, url_for, request, session, make_response, flash
+# from flask_mysqldb import MySQL
+import mysql
+import mysql.connector
 
 app = Flask(__name__)
 
+# app.config['MySQL_HOST'] = '127.0.0.1'
+# app.config['MySQL_USER'] = 'root'
+# app.config['MySQL_PASSWORD'] = ''
+# app.config['MySQL_DB'] = 'covid'
+
+# mysql = MySQL(app)
 
 # 404 Page
 
+
+def run_sql_file():
+    mydb = mysql.connector.connect(
+      host="127.0.0.1",
+      user="root",
+      passwd="Priyanshu25@",
+      database="covid"
+    )
+    file = open('covid.sql', 'r')
+    sql = " ".join(file.readlines())
+    mycursor = mydb.cursor()
+    mycursor.execute(sql)
+
+run_sql_file()  #run only once
 
 @app.errorhandler(404)
 def page_not_found(e):
